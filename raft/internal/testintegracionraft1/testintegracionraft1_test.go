@@ -226,6 +226,8 @@ func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
 	fmt.Printf("Lider inicial\n")
 	lider := cfg.pruebaUnLider(3)
 
+	cfg.conectados[lider] = false
+
 	fmt.Printf("Encontrado lider %d\n", lider)
 
 	cfg.stopDistributedProcess(lider)
@@ -242,6 +244,8 @@ func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
 			cfg.stopDistributedProcess(i)
 		}
 	}
+
+	cfg.conectados[lider] = true
 
 	fmt.Println(".............", t.Name(), "Superado")
 }
@@ -413,7 +417,6 @@ func (cfg *configDespliegue) stopDistributedProcess(node int) {
 	err := cfg.nodosRaft[node].CallTimeout("NodoRaft.ParaNodo",
 		raft.Vacio{}, &reply, 10*time.Millisecond)
 	check.CheckError(err, "Error en llamada RPC Para nodo")
-	cfg.conectados[node] = false
 }
 
 // Comprobar estado remoto de un nodo con respecto a un estado prefijado
