@@ -56,7 +56,7 @@ const (
 	tLatido = 1 * time.Second
 	// Cuanto espera un seguidor a recibir un latido antes de
 	// dar al líder como caído e iniciar una elección
-	tEsperaLatido = 10 * time.Second
+	tEsperaLatido = 10 * time.Second // CAMBIAR PARA QUE SEA RANDOM
 	// Tiempo minimo hasta iniciar nueva elección (en segundos)
 	tEleccMin = 2
 	// Tiempo máximo hasta iniciar nueva elección (en segundos)
@@ -182,7 +182,7 @@ func NuevoNodo(nodos []rpctimeout.HostPort, yo int,
 	return nr
 }
 
-// Envia las entradas comprometidas por el canal canalAplicarOperacion
+// Envia las entradas comprometidas por el canal canalAplicarOperacion al main
 func aplicarEntradas(nr *NodoRaft, canalAplicarOperacion chan AplicaOperacion) {
 	for {
 		if nr.CommitIndice > nr.AppliedIndice {

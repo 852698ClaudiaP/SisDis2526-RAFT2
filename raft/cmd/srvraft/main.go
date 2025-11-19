@@ -22,6 +22,12 @@ import (
 	//"time"
 )
 
+func readOperacion(aplicaOperacion chan raft.AplicaOperacion) {
+	for {
+		_ = <-aplicaOperacion // Lee un valor del canal
+	}
+}
+
 func main() {
 	// obtener entero de indice de este nodo
 	me, err := strconv.Atoi(os.Args[1])
@@ -35,8 +41,11 @@ func main() {
 	}
 
 	// Parte Servidor
-	nr := raft.NuevoNodo(nodos, me, make(chan raft.AplicaOperacion, 1000))
+	aplicaOperacion := make(chan raft.AplicaOperacion, 1000)
+	nr := raft.NuevoNodo(nodos, me, aplicaOperacion)
 	rpc.Register(nr)
+
+	go readOperacion(aplicaOperacion)
 
 	fmt.Println("Replica escucha en :", me, " de ", os.Args[2:])
 

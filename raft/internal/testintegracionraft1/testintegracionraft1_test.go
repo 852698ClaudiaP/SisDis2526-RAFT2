@@ -27,13 +27,13 @@ import (
 const (
 	//hosts
 	MAQUINA1 = "192.168.3.5"
-	MAQUINA2 = "192.168.3.5"
-	MAQUINA3 = "192.168.3.5"
+	MAQUINA2 = "192.168.3.6"
+	MAQUINA3 = "192.168.3.7"
 
 	//puertos
-	PUERTOREPLICA1 = "29264"
-	PUERTOREPLICA2 = "29265"
-	PUERTOREPLICA3 = "29266"
+	PUERTOREPLICA1 = "29260"
+	PUERTOREPLICA2 = "29261"
+	PUERTOREPLICA3 = "29262"
 
 	//nodos replicas
 	REPLICA1 = MAQUINA1 + ":" + PUERTOREPLICA1
@@ -226,11 +226,10 @@ func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
 	fmt.Printf("Lider inicial\n")
 	lider := cfg.pruebaUnLider(3)
 
-	cfg.conectados[lider] = false
-
 	fmt.Printf("Encontrado lider %d\n", lider)
 
 	cfg.stopDistributedProcess(lider)
+	cfg.conectados[lider] = false
 
 	time.Sleep(16000 * time.Millisecond)
 
