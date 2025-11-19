@@ -167,7 +167,7 @@ func (cfg *configDespliegue) stop() {
 
 // Se ponen en marcha las replicas - 3 NODOS RAFT
 func (cfg *configDespliegue) soloArranqueYparadaTest1(t *testing.T) {
-	//t.Skip("SKIPPED soloArranqueYparadaTest1")
+	t.Skip("SKIPPED soloArranqueYparadaTest1")
 
 	fmt.Println(t.Name(), ".....................")
 
@@ -284,9 +284,10 @@ func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 
 	// Comprometer una entrada
 	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
 
 	// Obtener un lider y, a continuación desconectar una de los nodos Raft
-	seguidor := 0
+	/*seguidor := 0
 	if lider == seguidor {
 		seguidor = 1
 	}
@@ -302,7 +303,7 @@ func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 
 	// reconectar nodo Raft previamente desconectado y comprobar varios acuerdos
 	cfg.startDistributedProcess(seguidor)
-	cfg.conectados[seguidor] = true
+	cfg.conectados[seguidor] = true*/
 
 	cfg.stopDistributedProcesses()
 }

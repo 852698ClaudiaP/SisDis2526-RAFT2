@@ -275,9 +275,16 @@ func soySeguidor(nr *NodoRaft) {
 	case <-nr.Latido:
 		log.Printf("Mandato %d. He recibido latido, mi lider es %d\n",
 			nr.MandatoActual, nr.IdLider)
+		nr.Logger.Printf("Mandato %d. He recibido latido, mi lider es %d\n",
+			nr.MandatoActual, nr.IdLider)
 	case <-espLatido.C:
 		nr.Estado = candidato
+
 		log.Printf(
+			"Mandato %d. No he recibido latidos, me vuelvo candidato.\n",
+			nr.MandatoActual,
+		)
+		nr.Logger.Printf(
 			"Mandato %d. No he recibido latidos, me vuelvo candidato.\n",
 			nr.MandatoActual,
 		)
@@ -299,21 +306,33 @@ func soyCandidato(nr *NodoRaft) {
 			"Mandato %d. He recibido mayoria, me convierto en lider.\n",
 			nr.MandatoActual,
 		)
+		nr.Logger.Printf(
+			"Mandato %d. He recibido mayoria, me convierto en lider.\n",
+			nr.MandatoActual,
+		)
 	case <-nr.Latido:
 		// Si recibe latidos de lider pasa a seguidor (otro ha sido elegido)
 		nr.Estado = seguidor
 		log.Printf("Mandato %d. Era candidato y me ha llegado latido.\n",
 			nr.MandatoActual,
 		)
+		nr.Logger.Printf("Mandato %d. Era candidato y me ha llegado latido.\n",
+			nr.MandatoActual,
+		)
 	case <-nr.cambiarASeguidor:
 		// Si hay otro nodo con mayor mandato que el local, este pasa a seguidor
 		nr.Estado = seguidor
+		nr.Logger.Printf(
+			"Mandato %d. Era candidato y me ha llegado un mandato superior.\n",
+			nr.MandatoActual,
+		)
 		log.Printf(
 			"Mandato %d. Era candidato y me ha llegado un mandato superior.\n",
 			nr.MandatoActual,
 		)
 	case <-tempElec.C:
 		// Si el temporizador expira, inicia otra elección
+		nr.Logger.Printf("Mandato %d. Ha expirado timer.\n", nr.MandatoActual)
 		log.Printf("Mandato %d. Ha expirado timer.\n", nr.MandatoActual)
 	}
 }
@@ -327,6 +346,7 @@ func iniciarEleccion(nr *NodoRaft) {
 	// Se incrementa el mandato actual para garantizar que cada elección
 	// de líder sea única y que no se superponga con elecciones anteriores.
 	nr.MandatoActual++
+	nr.Logger.Printf("Inicio elección en mandato %d\n", nr.MandatoActual)
 	log.Printf("Inicio elección en mandato %d\n", nr.MandatoActual)
 
 	// El nodo se vota a si mismo
@@ -360,6 +380,10 @@ func soyLider(nr *NodoRaft) {
 	select {
 	case <-nr.cambiarASeguidor:
 		log.Printf(
+			"Mandato %d. Hay otro lider con mandato superior, me vuelvo seguidor.\n",
+			nr.MandatoActual,
+		)
+		nr.Logger.Printf(
 			"Mandato %d. Hay otro lider con mandato superior, me vuelvo seguidor.\n",
 			nr.MandatoActual,
 		)
@@ -487,6 +511,7 @@ func (nr *NodoRaft) someterOperacion(operacion TipoOperacion) (int, int,
 	valorADevolver := ""
 
 	if EsLider {
+		nr.Logger.Println("lider tratando de someter operacion")
 		// Añadir entrada a mi log
 		nr.addEntrada(Entrada{
 			nr.MandatoActual,
@@ -497,6 +522,11 @@ func (nr *NodoRaft) someterOperacion(operacion TipoOperacion) (int, int,
 		done := make(chan bool) //necesita mas espacio si se puede estar comprometiendo multiples entradas al mismo tiempo
 		go nr.esperarComprometido(indice, done)
 		<-done
+
+		nr.Logger.Printf(
+			"Mandato %d. Entrada comprometida\n",
+			nr.MandatoActual,
+		)
 
 		log.Printf(
 			"Mandato %d. Entrada comprometida\n",
@@ -517,14 +547,15 @@ func (nr *NodoRaft) esperarComprometido(indice int, done chan bool) {
 				nodosComprometidos++
 			}
 		}
-		log.Printf(
-			"HEREEEE %d\n",
-			len(nr.Nodos)/2,
+		nr.Logger.Printf(
+			"HEREEEE. Comprometidos: %d. lastIndice: %d\n",
+			nodosComprometidos, nr.lastIndice[nr.Yo],
 		)
-		if nodosComprometidos >= (len(nr.Nodos) / 2) {
+		if nodosComprometidos >= ((len(nr.Nodos) / 2) + 1) {
 			done <- true
 			break
 		}
+		time.Sleep(10 * time.Millisecond)
 	}
 }
 
@@ -548,6 +579,7 @@ func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 type Vacio struct{}
 
 func (nr *NodoRaft) ParaNodo(args Vacio, reply *Vacio) error {
+	nr.Logger.Println("nodo detenido")
 	defer nr.para()
 	return nil
 }
@@ -620,6 +652,8 @@ func (nr *NodoRaft) PedirVoto(peticion *ArgsPeticionVoto,
 
 		log.Printf("Mandato %d. Voto negado a %d\n",
 			nr.MandatoActual, peticion.IdSolicitante)
+		nr.Logger.Printf("Mandato %d. Voto negado a %d\n",
+			nr.MandatoActual, peticion.IdSolicitante)
 
 	} else {
 
@@ -633,6 +667,8 @@ func (nr *NodoRaft) PedirVoto(peticion *ArgsPeticionVoto,
 		}
 
 		log.Printf("Mandato %d. Voto dado a %d\n",
+			peticion.MandSolicitante, peticion.IdSolicitante)
+		nr.Logger.Printf("Mandato %d. Voto dado a %d\n",
 			peticion.MandSolicitante, peticion.IdSolicitante)
 
 	}
@@ -698,9 +734,13 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 		results.MandatoActual = nr.MandatoActual
 	} else {
 		//se introduce nueva entrada en el log
-		//nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Ind, args.Entradas.Mandato, args.Entradas.Op.Operacion, args.Entradas.Op.Clave, args.Entradas.Op.Valor)
+		nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Operacion.Indice, args.Entradas.Mandato, args.Entradas.Operacion.Operacion.Operacion, args.Entradas.Operacion.Operacion.Clave, args.Entradas.Operacion.Operacion.Valor)
 
 		log.Printf(
+			"Mandato %d. Entrada comprometida\n",
+			nr.MandatoActual,
+		)
+		nr.Logger.Printf(
 			"Mandato %d. Entrada comprometida\n",
 			nr.MandatoActual,
 		)
@@ -768,6 +808,8 @@ func (nr *NodoRaft) enviarPeticionVoto(nodo int, args *ArgsPeticionVoto,
 			}
 
 		}
+		nr.Logger.Printf("Mandato %d. Llega voto con valor: %t\n", nr.MandatoActual,
+			reply.HaDadoSuVoto)
 		log.Printf("Mandato %d. Llega voto con valor: %t\n", nr.MandatoActual,
 			reply.HaDadoSuVoto)
 	}
