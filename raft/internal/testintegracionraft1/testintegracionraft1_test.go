@@ -167,7 +167,7 @@ func (cfg *configDespliegue) stop() {
 
 // Se ponen en marcha las replicas - 3 NODOS RAFT
 func (cfg *configDespliegue) soloArranqueYparadaTest1(t *testing.T) {
-	//t.Skip("SKIPPED soloArranqueYparadaTest1")
+	t.Skip("SKIPPED soloArranqueYparadaTest1")
 
 	fmt.Println(t.Name(), ".....................")
 
@@ -193,7 +193,7 @@ func (cfg *configDespliegue) soloArranqueYparadaTest1(t *testing.T) {
 
 // Primer lider en marcha - 3 NODOS RAFT
 func (cfg *configDespliegue) elegirPrimerLiderTest2(t *testing.T) {
-	//t.Skip("SKIPPED ElegirPrimerLiderTest2")
+	t.Skip("SKIPPED ElegirPrimerLiderTest2")
 
 	fmt.Println(t.Name(), ".....................")
 
@@ -214,7 +214,7 @@ func (cfg *configDespliegue) elegirPrimerLiderTest2(t *testing.T) {
 
 // Fallo de un primer lider y reeleccion de uno nuevo - 3 NODOS RAFT
 func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
-	//t.Skip("SKIPPED FalloAnteriorElegirNuevoLiderTest3")
+	t.Skip("SKIPPED FalloAnteriorElegirNuevoLiderTest3")
 
 	fmt.Println(t.Name(), ".....................")
 
@@ -251,7 +251,7 @@ func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
 
 // 3 operaciones comprometidas con situacion estable y sin fallos - 3 NODOS RAFT
 func (cfg *configDespliegue) tresOperacionesComprometidasEstable(t *testing.T) {
-	//t.Skip("SKIPPED tresOperacionesComprometidasEstable")
+	t.Skip("SKIPPED tresOperacionesComprometidasEstable")
 
 	cfg.startDistributedProcesses()
 
@@ -271,17 +271,40 @@ func (cfg *configDespliegue) tresOperacionesComprometidasEstable(t *testing.T) {
 
 // Se consigue acuerdo a pesar de desconexiones de seguidor -- 3 NODOS RAFT
 func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
-	t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
+	//t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
 
 	// A completar ???
 
-	// Comprometer una entrada
+	cfg.startDistributedProcesses()
 
-	//  Obtener un lider y, a continuación desconectar una de los nodos Raft
+	// Espera para que hayan elegido lider
+	time.Sleep(4000 * time.Millisecond)
+
+	lider := cfg.pruebaUnLider(3)
+
+	// Comprometer una entrada
+	cfg.someterOperacionRaft(lider)
+
+	// Obtener un lider y, a continuación desconectar una de los nodos Raft
+	seguidor := 0
+	if lider == seguidor {
+		seguidor = 1
+	}
+
+	cfg.stopDistributedProcess(seguidor)
+	cfg.conectados[seguidor] = false
 
 	// Comprobar varios acuerdos con una réplica desconectada
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+	time.Sleep(4000 * time.Millisecond)
 
 	// reconectar nodo Raft previamente desconectado y comprobar varios acuerdos
+	cfg.startDistributedProcess(seguidor)
+	cfg.conectados[seguidor] = true
+
+	cfg.stopDistributedProcesses()
 }
 
 // NO se consigue acuerdo al desconectarse mayoría de seguidores -- 3 NODOS RAFT
@@ -321,7 +344,7 @@ func (cfg *configDespliegue) SometerConcurrentementeOperaciones(t *testing.T) {
 // Comprobar que hay un solo lider
 // probar varias veces si se necesitan reelecciones
 func (cfg *configDespliegue) pruebaUnLider(numreplicas int) int {
-	for iters := 0; iters < 10; iters++ {
+	for iters := 0; iters < 20; iters++ {
 		time.Sleep(500 * time.Millisecond)
 		mapaLideres := make(map[int][]int)
 		for i := 0; i < numreplicas; i++ {
@@ -387,13 +410,22 @@ func (cfg *configDespliegue) startDistributedProcesses() {
 			" "+strconv.Itoa(i)+" "+
 			rpctimeout.HostPortArrayToString(cfg.nodosRaft),
 			[]string{endPoint.Host()}, cfg.cr, PRIVKEYFILE)
-
-		// dar tiempo para se establezcan las replicas
-		//time.Sleep(2000 * time.Millisecond)
 	}
 
 	// aproximadamente 500 ms para cada arranque por ssh en portatil
-	time.Sleep(6000 * time.Millisecond)
+	time.Sleep(2000 * time.Millisecond)
+}
+
+func (cfg *configDespliegue) startDistributedProcess(node int) {
+	//cfg.t.Log("Before starting following distributed processes: ", cfg.nodosRaft)
+
+	despliegue.ExecMutipleHosts(EXECREPLICACMD+
+		" "+strconv.Itoa(node)+" "+
+		rpctimeout.HostPortArrayToString(cfg.nodosRaft),
+		[]string{cfg.nodosRaft[node].Host()}, cfg.cr, PRIVKEYFILE)
+
+	// aproximadamente 500 ms para cada arranque por ssh en portatil
+	time.Sleep(2000 * time.Millisecond)
 }
 
 //

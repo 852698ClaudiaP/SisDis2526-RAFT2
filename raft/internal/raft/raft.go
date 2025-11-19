@@ -56,11 +56,12 @@ const (
 	tLatido = 1 * time.Second
 	// Cuanto espera un seguidor a recibir un latido antes de
 	// dar al líder como caído e iniciar una elección
-	tEsperaLatido = 10 * time.Second // CAMBIAR PARA QUE SEA RANDOM
+	tEspLatidoMin = 10000
+	tEspLatidoMax = 6000
 	// Tiempo minimo hasta iniciar nueva elección (en segundos)
-	tEleccMin = 2
+	tEleccMin = 2000
 	// Tiempo máximo hasta iniciar nueva elección (en segundos)
-	tEleccMax = 6
+	tEleccMax = 6000
 )
 
 type Estado string
@@ -267,7 +268,8 @@ func soySeguidor(nr *NodoRaft) {
 
 	// Tiempo el seguidor acepta sin latidos
 	// antes de dar al Líder como desaparecido
-	espLatido := time.NewTimer(tEsperaLatido)
+	espLatido := time.NewTimer(
+		time.Duration(genRandom(tEspLatidoMin, tEspLatidoMax)) * time.Millisecond)
 
 	select {
 	case <-nr.Latido:
@@ -287,7 +289,7 @@ func soyCandidato(nr *NodoRaft) {
 	iniciarEleccion(nr)
 	// Tiempo hasta iniciar una nueva elección
 	tempElec := time.NewTimer(
-		time.Duration(genRandom(tEleccMin, tEleccMax)) * time.Second)
+		time.Duration(genRandom(tEleccMin, tEleccMax)) * time.Millisecond)
 
 	select {
 	case <-nr.cambiarALider:
