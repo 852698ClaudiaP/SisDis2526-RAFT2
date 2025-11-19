@@ -56,8 +56,8 @@ const (
 	tLatido = 1 * time.Second
 	// Cuanto espera un seguidor a recibir un latido antes de
 	// dar al líder como caído e iniciar una elección
-	tEspLatidoMin = 10000
-	tEspLatidoMax = 6000
+	tEspLatidoMin = 6000
+	tEspLatidoMax = 10000
 	// Tiempo minimo hasta iniciar nueva elección (en segundos)
 	tEleccMin = 2000
 	// Tiempo máximo hasta iniciar nueva elección (en segundos)
@@ -170,7 +170,8 @@ func NuevoNodo(nodos []rpctimeout.HostPort, yo int,
 	}
 
 	if kEnableDebugLogs {
-		initLogger(nr.Logger, nodos[yo])
+		nr.Logger = initLogger(nodos[yo])
+		nr.Logger.Println("logger initialized")
 	} else {
 		nr.Logger = log.New(io.Discard, "", 0)
 	}
@@ -223,12 +224,12 @@ func enviarEntradas(nr *NodoRaft) {
 	}
 }
 
-func initLogger(logger *log.Logger, nodo rpctimeout.HostPort) {
+func initLogger(nodo rpctimeout.HostPort) *log.Logger {
 	nombreNodo := nodo.Host() + "_" + nodo.Port()
 	fmt.Println("nombreNodo: ", nombreNodo)
 
 	if kLogToStdout {
-		logger = log.New(os.Stdout, nombreNodo+" -->> ",
+		return log.New(os.Stdout, nombreNodo+" -->> ",
 			log.Lmicroseconds|log.Lshortfile)
 	} else {
 		err := os.MkdirAll(kLogOutputDir, os.ModePerm)
@@ -242,10 +243,9 @@ func initLogger(logger *log.Logger, nodo rpctimeout.HostPort) {
 		if err != nil {
 			panic(err.Error())
 		}
-		logger = log.New(logOutputFile,
+		return log.New(logOutputFile,
 			nombreNodo+" -> ", log.Lmicroseconds|log.Lshortfile)
 	}
-	logger.Println("logger initialized")
 }
 
 // Selecciona el codigo a ejecutar dependiendo del estado
@@ -517,6 +517,10 @@ func (nr *NodoRaft) esperarComprometido(indice int, done chan bool) {
 				nodosComprometidos++
 			}
 		}
+		log.Printf(
+			"HEREEEE %d\n",
+			len(nr.Nodos)/2,
+		)
 		if nodosComprometidos >= (len(nr.Nodos) / 2) {
 			done <- true
 			break
