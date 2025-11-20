@@ -45,7 +45,7 @@ const (
 	kEnableDebugLogs = true
 
 	// Poner a true para logear a stdout en lugar de a fichero
-	kLogToStdout = true
+	kLogToStdout = false
 
 	// Cambiar esto para salida de logs en un directorio diferente
 	kLogOutputDir = "./logs_raft/"
@@ -114,9 +114,9 @@ type NodoRaft struct {
 	// Indice de la entrada mas alta que ha sido aplicada
 	AppliedIndice int
 	// Por cada nodo, indice de la siguiente entrada que enviar a ese nodo
-	nextIndice []int
+	NextIndice []int
 	// Por cada nodo, indice de la entrada mas alta que se sabe esta replicada
-	lastIndice []int
+	LastIndice []int
 }
 
 // Entrada que guardar en el registro
@@ -165,8 +165,8 @@ func NuevoNodo(nodos []rpctimeout.HostPort, yo int,
 	nr.AppliedIndice = 0
 
 	for i := 0; i < len(nr.Nodos); i++ {
-		nr.nextIndice = append(nr.nextIndice, 0)
-		nr.lastIndice = append(nr.lastIndice, 0)
+		nr.NextIndice = append(nr.NextIndice, 0)
+		nr.LastIndice = append(nr.LastIndice, 0)
 	}
 
 	if kEnableDebugLogs {
@@ -203,10 +203,12 @@ func enviarEntradas(nr *NodoRaft) {
 	for {
 		if nr.Estado == lider {
 			// Mandar entrada a nodos
+			// HERE
 			for nodo := 0; nodo < len(nr.Nodos); nodo++ {
 				if nodo != nr.Yo {
 
-					if nr.getUltimoIndice() >= nr.nextIndice[nodo] {
+					if nr.getUltimoIndice() >= nr.NextIndice[nodo] {
+						nr.NextIndice[nodo]++
 						var resultados Results
 						go nr.enviarOperacion(nodo,
 							&ArgAppendEntries{
@@ -214,12 +216,11 @@ func enviarEntradas(nr *NodoRaft) {
 								nr.Yo,
 								nr.getUltimoIndice(),
 								nr.getUltimoMandato(),
-								nr.Log[nr.nextIndice[nodo]],
+								nr.Log[nr.NextIndice[nodo]],
 								nr.CommitIndice,
 							},
 							&resultados)
 					}
-
 				}
 			}
 		}
@@ -275,8 +276,8 @@ func soySeguidor(nr *NodoRaft) {
 
 	select {
 	case <-nr.Latido:
-		nr.Logger.Printf("Mandato %d. He recibido latido, mi lider es %d\n",
-			nr.MandatoActual, nr.IdLider)
+		/*nr.Logger.Printf("Mandato %d. He recibido latido, mi lider es %d\n",
+		nr.MandatoActual, nr.IdLider)*/
 	case <-espLatido.C:
 		nr.Estado = candidato
 
@@ -483,14 +484,14 @@ func (nr *NodoRaft) obtenerEstado() (int, int, bool, int) {
 // - Quinto valor es el resultado de aplicar esta operación en máquina de estados
 func (nr *NodoRaft) someterOperacion(operacion TipoOperacion) (int, int,
 	bool, int, string) {
-	indice := nr.lastIndice[nr.Yo] + 1
+	indice := nr.LastIndice[nr.Yo] + 1
 	mandato := nr.MandatoActual
 	EsLider := (nr.IdLider == nr.Yo)
 	idLider := nr.IdLider
 	valorADevolver := ""
 
 	if EsLider {
-		nr.Logger.Println("lider tratando de someter operacion")
+		// HERE
 		// Añadir entrada a mi log
 		nr.addEntrada(Entrada{
 			nr.MandatoActual,
@@ -517,31 +518,38 @@ func (nr *NodoRaft) esperarComprometido(indice int, done chan bool) {
 	for {
 		nodosComprometidos := 0
 		for idNodo := 0; idNodo < len(nr.Nodos); idNodo++ {
-			if nr.lastIndice[idNodo] >= indice {
+			if nr.LastIndice[idNodo] >= indice {
 				nodosComprometidos++
 			}
 		}
-		nr.Logger.Printf(
-			"HEREEEE. Comprometidos: %d. lastIndice: %d\n",
-			nodosComprometidos, nr.lastIndice[nr.Yo],
-		)
 		if nodosComprometidos >= ((len(nr.Nodos) / 2) + 1) {
+			nr.Logger.Println("COMPROMETIDO")
 			done <- true
+			nr.Logger.Println("COMPROMETIDO2")
 			break
 		}
+
+		nr.Logger.Println("lider esperando comprometido")
 		time.Sleep(10 * time.Millisecond)
 	}
 }
 
-// Se encarga de enviar un latido a un nodo específico y gestionar la respuesta.
+// Se encarga de enviar una operacion a un nodo específico y gestionar la respuesta.
 func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 	resultados *Results) bool {
 
+	nr.Logger.Printf("Actualizando log de %d", idNodo)
 	err := nr.Nodos[idNodo].CallTimeout("NodoRaft.AppendEntries", args,
 		&resultados, tRespCall)
-	if err != nil {
+
+	nr.Logger.Printf("LETSGOOOOOO %d", idNodo)
+	if err != nil { //error
+		nr.Logger.Printf("Error al actualizar log de %d", idNodo)
+		nr.NextIndice[idNodo]--
 		return false
 	} else {
+		nr.Logger.Printf("Actualizado log de %d", idNodo)
+		nr.LastIndice[idNodo] = nr.NextIndice[idNodo]
 		return true
 	}
 }
@@ -582,6 +590,7 @@ type ResultadoRemoto struct {
 
 func (nr *NodoRaft) SometerOperacionRaft(args TipoOperacion,
 	reply *ResultadoRemoto) error {
+
 	reply.IndiceRegistro, reply.Mandato, reply.EsLider,
 		reply.IdLider, reply.ValorADevolver = nr.someterOperacion(args)
 
@@ -672,13 +681,13 @@ type ArgAppendEntries struct {
 	// Id del lider
 	IdLider int
 	// Indice de la entrada anterior
-	prevLogIndice int
+	PrevLogIndice int
 	// Mandato de la entrada anterior
-	prevLogMandato int
+	PrevLogMandato int
 	// Entrada a añadir al log (por ahora solo una)
 	Entradas Entrada
 	// Commit index del lider
-	liderCommit int
+	LiderCommit int
 }
 
 type Results struct {
@@ -694,6 +703,8 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 	//si esta vacio se trata de un latido,
 	//sino, se esta replicando una nueva entrada
 	//en el registro de operaciones
+	nr.Logger.Printf("Mandato %d. Me ha llegado operacion de %d\n",
+		nr.MandatoActual, args.IdLider)
 	if args.Entradas == (Entrada{}) {
 		//fmt.Printf("Mandato %d. Latido recibido\n", nr.MandatoActual)
 		if (args.MandLider >= nr.MandatoActual) && (args.IdLider != nr.IdLider) {
@@ -706,9 +717,10 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 
 		results.Exito = true
 		results.MandatoActual = nr.MandatoActual
+		nr.Logger.Printf("Mandato %d. Latido", nr.MandatoActual)
 	} else {
 		//se introduce nueva entrada en el log
-		nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Operacion.Indice, args.Entradas.Mandato, args.Entradas.Operacion.Operacion.Operacion, args.Entradas.Operacion.Operacion.Clave, args.Entradas.Operacion.Operacion.Valor)
+		//nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Operacion.Indice, args.Entradas.Mandato, args.Entradas.Operacion.Operacion.Operacion, args.Entradas.Operacion.Operacion.Clave, args.Entradas.Operacion.Operacion.Valor)
 
 		nr.Logger.Printf(
 			"Mandato %d. Entrada comprometida\n",
@@ -723,7 +735,7 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 
 func (nr *NodoRaft) addEntrada(entrada Entrada) {
 	nr.Log = append(nr.Log, entrada)
-	nr.lastIndice[nr.Yo] = entrada.Operacion.Indice
+	nr.LastIndice[nr.Yo] = entrada.Operacion.Indice
 }
 
 // Reconoce a un nuevo nodo como lider
