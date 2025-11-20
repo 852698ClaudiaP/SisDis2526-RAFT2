@@ -278,8 +278,8 @@ func soySeguidor(nr *NodoRaft) {
 
 	select {
 	case <-nr.Latido:
-		/*nr.Logger.Printf("Mandato %d. He recibido latido, mi lider es %d\n",
-		nr.MandatoActual, nr.IdLider)*/
+		nr.Logger.Printf("Mandato %d. He recibido latido, mi lider es %d\n",
+			nr.MandatoActual, nr.IdLider)
 	case <-espLatido.C:
 		nr.Estado = candidato
 
@@ -379,17 +379,6 @@ func enviarLatidosNodos(nr *NodoRaft) {
 	var resultados Results
 	for nodo := 0; nodo < len(nr.Nodos); nodo++ {
 		if nodo != nr.Yo {
-
-			/*go nr.enviarOperacion(nodo,
-			&ArgAppendEntries{
-				nr.MandatoActual,
-				nr.Yo,
-				nr.getUltimoIndice(),
-				nr.getUltimoMandato(),
-				nr.Log[nr.NextIndice[nodo]],
-				nr.CommitIndice,
-			},
-			&resultados)*/
 			go nr.enviarLatido(nodo,
 				&ArgAppendEntries{
 					nr.MandatoActual,
@@ -490,7 +479,7 @@ func (nr *NodoRaft) obtenerEstado() (int, int, bool, int) {
 // en el futuro.
 // Resultado de este método :
 // - Primer valor devuelto es el indice del registro donde se va a colocar
-// - la operacion si consigue comprometerse.
+//   la operacion si consigue comprometerse.
 // - El segundo valor es el mandato en curso
 // - El tercer valor es true si el nodo cree ser el lider
 // - Cuarto valor es el lider, es el indice del líder si no es él
@@ -532,20 +521,19 @@ func (nr *NodoRaft) esperarComprometido(indice int, done chan bool) {
 		nodosComprometidos := 0
 		for idNodo := 0; idNodo < len(nr.Nodos); idNodo++ {
 			if nr.LastIndice[idNodo] >= indice {
-				//nr.Mux.Lock()
-				nr.Logger.Println("COMP")
+				nr.Mux.Lock()
 				nodosComprometidos++
-				//nr.Mux.Unlock()
+				nr.Mux.Unlock()
 			}
 		}
 		if nodosComprometidos >= ((len(nr.Nodos) / 2) + 1) {
-			nr.Logger.Println("COMPROMETIDO")
+			nr.Logger.Printf(
+				"Comprometidos %d\n",
+				nodosComprometidos,
+			)
 			done <- true
-			nr.Logger.Println("COMPROMETIDO2")
 			break
 		}
-
-		nr.Logger.Printf("numero de comprometidos: %d\n", nodosComprometidos)
 	}
 }
 
@@ -553,11 +541,9 @@ func (nr *NodoRaft) esperarComprometido(indice int, done chan bool) {
 func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 	resultados *Results) bool {
 
-	nr.Logger.Printf("Actualizando log de %d", idNodo)
 	err := nr.Nodos[idNodo].CallTimeout("NodoRaft.AppendEntries", args,
 		&resultados, tRespCall)
 
-	nr.Logger.Printf("LETSGOOOOOO %d", idNodo)
 	if err != nil { //error
 		nr.Logger.Printf("Error al actualizar log de %d", idNodo)
 		nr.NextIndice[idNodo]--
@@ -735,7 +721,7 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 		nr.Logger.Printf("Mandato %d. Latido", nr.MandatoActual)
 	} else {
 		//se introduce nueva entrada en el log
-		//nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Operacion.Indice, args.Entradas.Mandato, args.Entradas.Operacion.Operacion.Operacion, args.Entradas.Operacion.Operacion.Clave, args.Entradas.Operacion.Operacion.Valor)
+		nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Operacion.Indice, args.Entradas.Mandato, args.Entradas.Operacion.Operacion.Operacion, args.Entradas.Operacion.Operacion.Clave, args.Entradas.Operacion.Operacion.Valor)
 
 		nr.Logger.Printf(
 			"Mandato %d. Entrada comprometida\n",

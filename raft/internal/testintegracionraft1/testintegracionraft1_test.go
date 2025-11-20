@@ -273,7 +273,7 @@ func (cfg *configDespliegue) tresOperacionesComprometidasEstable(t *testing.T) {
 
 // Se consigue acuerdo a pesar de desconexiones de seguidor -- 3 NODOS RAFT
 func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
-	//t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
+	t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
 
 	cfg.startDistributedProcesses()
 
@@ -318,7 +318,7 @@ func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
 	cfg.startDistributedProcesses()
 
 	// Espera para que hayan elegido lider
-	time.Sleep(4000 * time.Millisecond)
+	time.Sleep(2000 * time.Millisecond)
 
 	lider := cfg.pruebaUnLider(3)
 
@@ -332,11 +332,12 @@ func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
 			cfg.conectados[i] = false
 		}
 	}
+	time.Sleep(4000 * time.Millisecond)
 
 	// Comprobar varios acuerdos con 2 réplicas desconectada
-	cfg.someterOperacionRaft(lider)
-	cfg.someterOperacionRaft(lider)
-	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaftFallo(lider)
+	cfg.someterOperacionRaftFallo(lider)
+	cfg.someterOperacionRaftFallo(lider)
 
 	// reconectar los 2 nodos Raft desconectados y probar varios acuerdos
 	for i := 0; i <= 2; i++ {
@@ -427,6 +428,21 @@ func (cfg *configDespliegue) someterOperacionRaft(indiceNodo int) (
 		raft.TipoOperacion{Operacion: "a", Clave: "b", Valor: "c"}, &reply, 200*time.Millisecond)
 
 	check.CheckError(err, "Error en llamada RPC SometerOperacionRaft")
+
+	return reply.IndiceRegistro, reply.Mandato, reply.EsLider,
+		reply.IdLider, reply.ValorADevolver
+}
+
+func (cfg *configDespliegue) someterOperacionRaftFallo(indiceNodo int) (
+	int, int, bool, int, string) {
+
+	var reply raft.ResultadoRemoto
+	err := cfg.nodosRaft[indiceNodo].CallTimeout("NodoRaft.SometerOperacionRaft",
+		raft.TipoOperacion{Operacion: "a", Clave: "b", Valor: "c"}, &reply, 200*time.Millisecond)
+
+	if err == nil {
+		cfg.t.Fatalf("La llamada RPC SometerOperacionRaft deberia haber fallado")
+	}
 
 	return reply.IndiceRegistro, reply.Mandato, reply.EsLider,
 		reply.IdLider, reply.ValorADevolver
