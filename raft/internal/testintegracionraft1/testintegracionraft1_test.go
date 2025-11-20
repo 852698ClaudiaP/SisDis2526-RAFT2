@@ -26,9 +26,10 @@ import (
 
 const (
 	//hosts
-	MAQUINA1 = "192.168.3.5"
-	MAQUINA2 = "192.168.3.6"
-	MAQUINA3 = "192.168.3.7"
+	//MAQUINA1 = "192.168.3.6"
+	MAQUINA1 = "localhost"
+	MAQUINA2 = "localhost"
+	MAQUINA3 = "localhost"
 
 	//puertos
 	PUERTOREPLICA1 = "29260"
@@ -55,7 +56,8 @@ const (
 
 // PATH de los ejecutables de modulo golang de servicio Raft
 //var PATH string = filepath.Join(os.Getenv("HOME"), "tmp", "p3", "raft")
-var PATH string = filepath.Join("/misc/alumnos/sd/sd2526/a852698/practica4", "raft")
+//var PATH string = filepath.Join("/misc/alumnos/sd/sd2526/a852698/practica4", "raft")
+var PATH string = filepath.Join("$HOME/sisdislasttry/practica4/practica4", "raft")
 
 // go run cmd/srvraft/main.go 0 127.0.0.1:29001 127.0.0.1:29002 127.0.0.1:29003
 var EXECREPLICACMD string = "cd " + PATH + "; go run " + EXECREPLICA
@@ -167,7 +169,7 @@ func (cfg *configDespliegue) stop() {
 
 // Se ponen en marcha las replicas - 3 NODOS RAFT
 func (cfg *configDespliegue) soloArranqueYparadaTest1(t *testing.T) {
-	t.Skip("SKIPPED soloArranqueYparadaTest1")
+	//t.Skip("SKIPPED soloArranqueYparadaTest1")
 
 	fmt.Println(t.Name(), ".....................")
 
