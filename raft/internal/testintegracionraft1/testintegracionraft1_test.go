@@ -275,8 +275,6 @@ func (cfg *configDespliegue) tresOperacionesComprometidasEstable(t *testing.T) {
 func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 	//t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
 
-	// A completar ???
-
 	cfg.startDistributedProcesses()
 
 	// Espera para que hayan elegido lider
@@ -288,7 +286,7 @@ func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 	cfg.someterOperacionRaft(lider)
 
 	// Obtener un lider y, a continuación desconectar una de los nodos Raft
-	/*seguidor := 0
+	seguidor := 0
 	if lider == seguidor {
 		seguidor = 1
 	}
@@ -297,31 +295,63 @@ func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 	cfg.conectados[seguidor] = false
 
 	// Comprobar varios acuerdos con una réplica desconectada
-	//cfg.someterOperacionRaft(lider)
-	//cfg.someterOperacionRaft(lider)
-	//cfg.someterOperacionRaft(lider)
-	//time.Sleep(4000 * time.Millisecond)
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
 
 	// reconectar nodo Raft previamente desconectado y comprobar varios acuerdos
 	cfg.startDistributedProcess(seguidor)
-	cfg.conectados[seguidor] = true*/
+	cfg.conectados[seguidor] = true
+
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+	time.Sleep(200 * time.Millisecond)
 
 	cfg.stopDistributedProcesses()
 }
 
 // NO se consigue acuerdo al desconectarse mayoría de seguidores -- 3 NODOS RAFT
 func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
-	t.Skip("SKIPPED SinAcuerdoPorFallos")
+	//t.Skip("SKIPPED SinAcuerdoPorFallos")
 
-	// A completar ???
+	cfg.startDistributedProcesses()
+
+	// Espera para que hayan elegido lider
+	time.Sleep(4000 * time.Millisecond)
+
+	lider := cfg.pruebaUnLider(3)
 
 	// Comprometer una entrada
+	cfg.someterOperacionRaft(lider)
 
 	//  Obtener un lider y, a continuación desconectar 2 de los nodos Raft
+	for i := 0; i <= 2; i++ {
+		if i != lider {
+			cfg.stopDistributedProcess(i)
+			cfg.conectados[i] = false
+		}
+	}
 
 	// Comprobar varios acuerdos con 2 réplicas desconectada
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
 
-	// reconectar lo2 nodos Raft  desconectados y probar varios acuerdos
+	// reconectar los 2 nodos Raft desconectados y probar varios acuerdos
+	for i := 0; i <= 2; i++ {
+		if i != lider {
+			cfg.startDistributedProcess(i)
+			cfg.conectados[i] = true
+		}
+	}
+
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+	time.Sleep(200 * time.Millisecond)
+
+	cfg.stopDistributedProcesses()
 }
 
 // Se somete 5 operaciones de forma concurrente -- 3 NODOS RAFT
@@ -394,7 +424,7 @@ func (cfg *configDespliegue) someterOperacionRaft(indiceNodo int) (
 
 	var reply raft.ResultadoRemoto
 	err := cfg.nodosRaft[indiceNodo].CallTimeout("NodoRaft.SometerOperacionRaft",
-		raft.TipoOperacion{Operacion: "a", Clave: "b", Valor: "c"}, &reply, 2000*time.Millisecond)
+		raft.TipoOperacion{Operacion: "a", Clave: "b", Valor: "c"}, &reply, 200*time.Millisecond)
 
 	check.CheckError(err, "Error en llamada RPC SometerOperacionRaft")
 

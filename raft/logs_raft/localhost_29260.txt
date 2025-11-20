@@ -1,6 +1,0 @@
-localhost_29260 -> 20:05:47.644811 raft.go:174: logger initialized
-localhost_29260 -> 20:05:55.571156 raft.go:284: Mandato 0. No he recibido latidos, me vuelvo candidato.
-localhost_29260 -> 20:05:55.571219 raft.go:334: Inicio elección en mandato 1
-localhost_29260 -> 20:05:55.572116 raft.go:793: Mandato 1. Llega voto con valor: true
-localhost_29260 -> 20:05:55.572151 raft.go:302: Mandato 1. He recibido mayoria, me convierto en lider.
-localhost_29260 -> 20:05:55.822198 raft.go:532: lider esperando comprometido
