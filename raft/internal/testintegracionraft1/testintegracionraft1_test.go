@@ -273,7 +273,7 @@ func (cfg *configDespliegue) tresOperacionesComprometidasEstable(t *testing.T) {
 
 // Se consigue acuerdo a pesar de desconexiones de seguidor -- 3 NODOS RAFT
 func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
-	t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
+	//t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
 
 	cfg.startDistributedProcesses()
 
@@ -425,7 +425,7 @@ func (cfg *configDespliegue) someterOperacionRaft(indiceNodo int) (
 
 	var reply raft.ResultadoRemoto
 	err := cfg.nodosRaft[indiceNodo].CallTimeout("NodoRaft.SometerOperacionRaft",
-		raft.TipoOperacion{Operacion: "a", Clave: "b", Valor: "c"}, &reply, 200*time.Millisecond)
+		raft.TipoOperacion{Operacion: "escribir", Clave: "clave", Valor: "valor"}, &reply, 200*time.Millisecond)
 
 	check.CheckError(err, "Error en llamada RPC SometerOperacionRaft")
 

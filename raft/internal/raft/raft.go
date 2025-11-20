@@ -210,7 +210,9 @@ func enviarEntradas(nr *NodoRaft) {
 					if nr.getUltimoIndice() >= nr.NextIndice[nodo] {
 						nr.Logger.Printf("Mandato %d. Actualizando log de %d",
 							nr.MandatoActual, nodo)
+						nr.Mux.Lock()
 						nr.NextIndice[nodo]++
+						nr.Mux.Unlock()
 						var resultados Results
 						go nr.enviarOperacion(nodo,
 							&ArgAppendEntries{
@@ -546,7 +548,9 @@ func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 
 	if err != nil { //error
 		nr.Logger.Printf("Error al actualizar log de %d", idNodo)
+		nr.Mux.Lock()
 		nr.NextIndice[idNodo]--
+		nr.Mux.Unlock()
 		return false
 	} else {
 		nr.Logger.Printf("Actualizado log de %d", idNodo)
@@ -661,7 +665,6 @@ func negarVoto(mandatoActual *int, ultimoMandato *int, haVotado *bool) {
 
 	*mandatoActual = *ultimoMandato
 	*haVotado = false
-	//*ultimoMandato++
 
 }
 
@@ -784,7 +787,9 @@ func (nr *NodoRaft) enviarPeticionVoto(nodo int, args *ArgsPeticionVoto,
 	} else {
 		if reply.HaDadoSuVoto && (reply.MandatoActual == nr.MandatoActual) {
 
+			nr.Mux.Lock()
 			nr.VotosRecibidos++
+			nr.Mux.Unlock()
 			if nr.VotosRecibidos > (len(nr.Nodos) / 2) {
 				nr.IdLider = nr.Yo
 				nr.cambiarALider <- true
