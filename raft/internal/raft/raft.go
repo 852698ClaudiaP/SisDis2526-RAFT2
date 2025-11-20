@@ -210,17 +210,30 @@ func enviarEntradas(nr *NodoRaft) {
 					if nr.getUltimoIndice() >= nr.NextIndice[nodo] {
 						nr.Logger.Printf("Mandato %d. Actualizando log de %d",
 							nr.MandatoActual, nodo)
+
+						var ultind int
+						var ultmand int
+						if nr.NextIndice[nodo] > 0 {
+							ultind = nr.NextIndice[nodo] - 1
+							ultmand = nr.Log[nr.NextIndice[nodo]-1].Mandato
+						} else {
+							ultind = -1
+							ultmand = -1
+						}
 						nr.Mux.Lock()
 						nr.NextIndice[nodo]++
 						nr.Mux.Unlock()
+
+						entradas := make([]Entrada, nr.getUltimoIndice()-nr.NextIndice[nodo]+1)
+						copy(entradas, nr.Log[nr.NextIndice[nodo]:])
 						var resultados Results
 						go nr.enviarOperacion(nodo,
 							&ArgAppendEntries{
 								nr.MandatoActual,
 								nr.Yo,
-								nr.getUltimoIndice(),
-								nr.getUltimoMandato(),
-								nr.Log[nr.NextIndice[nodo]-1],
+								ultind,
+								ultmand,
+								entradas,
 								nr.CommitIndice,
 							},
 							&resultados)
@@ -353,7 +366,8 @@ func pedirVotosNodos(nr *NodoRaft) {
 	for idNodo := 0; idNodo < len(nr.Nodos); idNodo++ {
 		if idNodo != nr.Yo {
 			go nr.enviarPeticionVoto(idNodo,
-				&ArgsPeticionVoto{nr.MandatoActual, nr.Yo}, &respuesta)
+				&ArgsPeticionVoto{nr.MandatoActual, nr.Yo,
+					nr.getUltimoIndice(), nr.getUltimoMandato()}, &respuesta)
 		}
 	}
 }
@@ -387,7 +401,7 @@ func enviarLatidosNodos(nr *NodoRaft) {
 					nr.Yo,
 					nr.getUltimoIndice(),
 					nr.getUltimoMandato(),
-					Entrada{},
+					nil,
 					nr.CommitIndice,
 				},
 				&resultados)
@@ -546,10 +560,19 @@ func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 	err := nr.Nodos[idNodo].CallTimeout("NodoRaft.AppendEntries", args,
 		&resultados, tRespCall)
 
-	if err != nil { //error
+	if err != nil || !resultados.Exito { //error
 		nr.Logger.Printf("Error al actualizar log de %d", idNodo)
 		nr.Mux.Lock()
 		nr.NextIndice[idNodo]--
+		nr.Mux.Unlock()
+		return false
+	} else if !resultados.Exito { // no ha conseguido consistencia
+		nr.Logger.Printf("Error al actualizar log de %d", idNodo)
+		nr.Mux.Lock()
+		nr.NextIndice[idNodo] = nr.NextIndice[idNodo] - 2
+		if nr.NextIndice[idNodo] < 0 {
+			nr.NextIndice[idNodo] = 0
+		}
 		nr.Mux.Unlock()
 		return false
 	} else {
@@ -611,9 +634,16 @@ func (nr *NodoRaft) SometerOperacionRaft(args TipoOperacion,
 // -----------
 // Nombres de campos deben comenzar con letra mayuscula !
 type ArgsPeticionVoto struct {
-	// Vuestros datos aqui
-	MandSolicitante int //mandato del candidato que pide voto
-	IdSolicitante   int //id del candidato que pide el voto
+	// Mandato del candidato que pide voto
+	MandSolicitante int
+	// Id del candidato que pide el voto
+	IdSolicitante int
+
+	// Añadimo 2 nuevos campos para cumplir la restricción de log
+	// Índice de la última entrada del log candidato
+	UltimoIndiceLog int
+	// Mandato de la última entrada del log candidato
+	UltimoMandatoLog int
 }
 
 // Structura de ejemplo de respuesta de RPC PedirVoto,
@@ -633,30 +663,74 @@ type RespuestaPeticionVoto struct {
 func (nr *NodoRaft) PedirVoto(peticion *ArgsPeticionVoto,
 	reply *RespuestaPeticionVoto) error {
 
-	nr.Mux.Lock()
-	if peticion.MandSolicitante <= nr.MandatoActual {
-
+	// Si el candidato tiene un mandato inferior, lo rechazo
+	if peticion.MandSolicitante < nr.MandatoActual {
 		negarVoto(&reply.MandatoActual, &nr.MandatoActual, &reply.HaDadoSuVoto)
-
-		nr.Logger.Printf("Mandato %d. Voto negado a %d\n",
+		nr.Logger.Printf("Mandato %d. Voto negado a %d (Mandato inferior)\n",
 			nr.MandatoActual, peticion.IdSolicitante)
+		return nil
+	}
 
-	} else {
-
+	// Si el candidato tiene un mandato superior o igual:
+	// Actualizar mi mandato al más alto si es necesario
+	if peticion.MandSolicitante > nr.MandatoActual {
 		nr.actualizarMandato(peticion.MandSolicitante)
-		darVoto(&nr.CandiVotado, peticion.IdSolicitante, &reply.MandatoActual,
-			&nr.MandatoActual, &reply.HaDadoSuVoto)
+		// Desbloquear mi voto para este nuevo mandato
+		nr.CandiVotado = IntNOINICIALIZADO
 
-		// Si no es ya seguidor, debe cambiar a seguidor
 		if nr.Estado == lider || nr.Estado == candidato {
 			nr.cambiarASeguidor <- true
 		}
-		nr.Logger.Printf("Mandato %d. Voto dado a %d\n",
+	}
+
+	// Ahora aplicamos nuevas restricciones
+	// -> No he votado en este mandato O voté por este mismo candidato
+	// -> El log del candidato está "tan o más completo" que mi log
+	if (nr.CandiVotado == IntNOINICIALIZADO ||
+		nr.CandiVotado == peticion.IdSolicitante) &&
+		logEsMasCompleto(peticion.UltimoMandatoLog,
+			peticion.UltimoIndiceLog, nr) {
+
+		darVoto(&nr.CandiVotado, peticion.IdSolicitante, &reply.MandatoActual,
+			&nr.MandatoActual, &reply.HaDadoSuVoto)
+
+		log.Printf("Mandato %d. Voto dado a %d (Log OK)\n",
+			peticion.MandSolicitante, peticion.IdSolicitante)
+		nr.Logger.Printf("Mandato %d. Voto dado a %d (Log OK)\n",
 			peticion.MandSolicitante, peticion.IdSolicitante)
 
+	} else {
+		// Negar el voto en cualquiero otro caso
+		negarVoto(&reply.MandatoActual, &nr.MandatoActual, &reply.HaDadoSuVoto)
+		if nr.CandiVotado != IntNOINICIALIZADO {
+			nr.Logger.Printf("Mandato %d. Voto negado a %d (Ya voté por %d)\n",
+				nr.MandatoActual, peticion.IdSolicitante, nr.CandiVotado)
+		} else {
+			nr.Logger.Printf("Mandato %d. Voto negado a %d (Log no completo)\n",
+				nr.MandatoActual, peticion.IdSolicitante)
+		}
 	}
-	nr.Mux.Unlock()
 	return nil
+}
+
+func logEsMasCompleto(candidatoMandato int,
+	candidatoIndice int, nr *NodoRaft) bool {
+
+	receptorMandato := nr.getUltimoMandato()
+	receptorIndice := nr.getUltimoIndice()
+
+	// En caso de que su mandato ya sera mayor que el mio
+	if candidatoMandato > receptorMandato {
+		return true
+	}
+
+	// Si tienen mismo mandato
+	if candidatoMandato == receptorMandato {
+		// Necestita que su indice sera mayor que el mío
+		return candidatoIndice >= receptorIndice
+	}
+	// El mandato del candidato es menor
+	return false
 }
 
 // Niega el voto al candidato y le avisa de que está en un mandato inferior al
@@ -689,7 +763,7 @@ type ArgAppendEntries struct {
 	// Mandato de la entrada anterior
 	PrevLogMandato int
 	// Entrada a añadir al log (por ahora solo una)
-	Entradas Entrada
+	Entradas []Entrada
 	// Commit index del lider
 	LiderCommit int
 }
@@ -703,13 +777,10 @@ type Results struct {
 // Metodo de tratamiento de llamadas RPC AppendEntries
 func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 	results *Results) error {
-	// Completar....
 	//si esta vacio se trata de un latido,
 	//sino, se esta replicando una nueva entrada
 	//en el registro de operaciones
-	nr.Logger.Printf("Mandato %d. Me ha llegado operacion de %d\n",
-		nr.MandatoActual, args.IdLider)
-	if args.Entradas == (Entrada{}) {
+	if args.Entradas == nil {
 		//fmt.Printf("Mandato %d. Latido recibido\n", nr.MandatoActual)
 		if (args.MandLider >= nr.MandatoActual) && (args.IdLider != nr.IdLider) {
 
@@ -721,25 +792,77 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 
 		results.Exito = true
 		results.MandatoActual = nr.MandatoActual
-		nr.Logger.Printf("Mandato %d. Latido", nr.MandatoActual)
 	} else {
-		//se introduce nueva entrada en el log
-		nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Operacion.Indice, args.Entradas.Mandato, args.Entradas.Operacion.Operacion.Operacion, args.Entradas.Operacion.Operacion.Clave, args.Entradas.Operacion.Operacion.Valor)
 
-		nr.Logger.Printf(
-			"Mandato %d. Entrada comprometida\n",
-			nr.MandatoActual,
-		)
+		//1. Reply false if term < currentTerm (§5.1)
+		if args.MandLider < nr.MandatoActual {
+			results.Exito = false
+			results.MandatoActual = nr.MandatoActual
+			nr.Logger.Printf("Mandato %d. AppendEntries RECHAZADO: Líder %d tiene mandato inferior (%d)",
+				nr.MandatoActual, args.IdLider, args.MandLider)
+			return nil
+		}
+
+		// 2. Reply false if log doesn’t contain an entry at prevLogIndex
+		// whose term matches prevLogTerm (§5.3)
+		if args.PrevLogIndice > 0 {
+			if args.PrevLogIndice > nr.getUltimoIndice() {
+				results.Exito = false
+				nr.Logger.Printf("Mandato %d. Consistencia FALLIDA: Mi log es demasiado corto (ult=%d) para prevIndice=%d\n",
+					nr.MandatoActual, nr.getUltimoIndice(), args.PrevLogIndice)
+				return nil
+			}
+
+			// 3. If an existing entry conflicts with a new one (same index but different terms), delete the existing entry and all that follow it (§5.3)
+			if nr.Log[args.PrevLogIndice].Mandato != args.PrevLogMandato {
+				results.Exito = false
+				// Elimino la entrada en conflicto y todas las entradas siguientes
+				nr.Log = nr.Log[:args.PrevLogIndice]
+				nr.Logger.Printf("Mandato %d. Consistencia FALLIDA: Mandato NO coincide en índice %d. Truncando log.\n",
+					nr.MandatoActual, args.PrevLogIndice)
+				return nil
+			}
+		}
+
+		//4. Append any new entries not already in the log
+		//se introduce nueva entrada en el log
+		//nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Operacion.Indice, args.Entradas.Mandato, args.Entradas.Operacion.Operacion.Operacion, args.Entradas.Operacion.Operacion.Clave, args.Entradas.Operacion.Operacion.Valor)
+		nr.addEntradas(args.Entradas)
 		results.Exito = true
 		results.MandatoActual = nr.MandatoActual
+		nr.Logger.Printf(
+			"Mandato %d. Entrada comprometida. ult: %d prevlogindice: %d\n",
+			nr.MandatoActual, nr.getUltimoIndice(), args.PrevLogIndice,
+		)
+		// 5. If leaderCommit > commitIndex, set commitIndex =
+		// min(leaderCommit, index of last new entry)
+		if args.LiderCommit > nr.CommitIndice {
+			nr.CommitIndice = min(args.LiderCommit, args.PrevLogIndice+len(args.Entradas))
+		}
 	}
 
 	return nil
 }
 
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
 func (nr *NodoRaft) addEntrada(entrada Entrada) {
 	nr.Log = append(nr.Log, entrada)
 	nr.LastIndice[nr.Yo] = entrada.Operacion.Indice
+}
+
+func (nr *NodoRaft) addEntradas(entradas []Entrada) {
+
+	nr.Log = append(nr.Log, entradas...)
+	if len(entradas) > 0 {
+		ultima := entradas[len(entradas)-1]
+		nr.LastIndice[nr.Yo] = ultima.Operacion.Indice
+	}
 }
 
 // Reconoce a un nuevo nodo como lider

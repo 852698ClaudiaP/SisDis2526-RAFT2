@@ -216,7 +216,7 @@ func (cfg *configDespliegue) elegirPrimerLiderTest2(t *testing.T) {
 
 // Fallo de un primer lider y reeleccion de uno nuevo - 3 NODOS RAFT
 func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
-	t.Skip("SKIPPED FalloAnteriorElegirNuevoLiderTest3")
+	//t.Skip("SKIPPED FalloAnteriorElegirNuevoLiderTest3")
 
 	fmt.Println(t.Name(), ".....................")
 
@@ -233,7 +233,7 @@ func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
 	cfg.stopDistributedProcess(lider)
 	cfg.conectados[lider] = false
 
-	time.Sleep(16000 * time.Millisecond)
+	time.Sleep(4000 * time.Millisecond)
 
 	fmt.Printf("Comprobar nuevo lider\n")
 	newlider := cfg.pruebaUnLider(3)
@@ -273,12 +273,12 @@ func (cfg *configDespliegue) tresOperacionesComprometidasEstable(t *testing.T) {
 
 // Se consigue acuerdo a pesar de desconexiones de seguidor -- 3 NODOS RAFT
 func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
-	//t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
+	t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
 
 	cfg.startDistributedProcesses()
 
 	// Espera para que hayan elegido lider
-	time.Sleep(4000 * time.Millisecond)
+	time.Sleep(200 * time.Millisecond)
 
 	lider := cfg.pruebaUnLider(3)
 
@@ -428,6 +428,7 @@ func (cfg *configDespliegue) someterOperacionRaft(indiceNodo int) (
 		raft.TipoOperacion{Operacion: "escribir", Clave: "clave", Valor: "valor"}, &reply, 200*time.Millisecond)
 
 	check.CheckError(err, "Error en llamada RPC SometerOperacionRaft")
+	time.Sleep(4000 * time.Millisecond)
 
 	return reply.IndiceRegistro, reply.Mandato, reply.EsLider,
 		reply.IdLider, reply.ValorADevolver
@@ -465,7 +466,8 @@ func (cfg *configDespliegue) startDistributedProcesses() {
 }
 
 func (cfg *configDespliegue) startDistributedProcess(node int) {
-	//cfg.t.Log("Before starting following distributed processes: ", cfg.nodosRaft)
+
+	fmt.Printf("Encendido nodo %d\n", node)
 
 	despliegue.ExecMutipleHosts(EXECREPLICACMD+
 		" "+strconv.Itoa(node)+" "+

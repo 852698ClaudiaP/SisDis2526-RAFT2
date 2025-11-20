@@ -1,0 +1,26 @@
+localhost_29261 -> 23:07:02.698897 raft.go:174: logger initialized
+localhost_29261 -> 23:07:02.699776 raft.go:871: Mandato 0. Mi nuevo lider es 0.
+localhost_29261 -> 23:07:02.699790 raft.go:449: Mandato 0. He actualizado a mandato 1
+localhost_29261 -> 23:07:02.699879 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:02.700062 raft.go:811: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 23:07:02.700094 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:02.700539 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:03.502243 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:04.502028 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:05.502950 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:06.282256 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:06.503324 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:07.503478 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:08.504245 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:09.504913 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:10.286209 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:10.505370 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:11.506220 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:12.506880 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:13.506905 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:14.290294 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:14.506891 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:15.507990 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:16.508945 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:17.509598 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 23:07:18.494676 raft.go:592: nodo detenido

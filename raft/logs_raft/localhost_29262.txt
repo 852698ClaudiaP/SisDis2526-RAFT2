@@ -1,0 +1,23 @@
+localhost_29262 -> 23:07:04.637501 raft.go:174: logger initialized
+localhost_29262 -> 23:07:04.638148 raft.go:871: Mandato 0. Mi nuevo lider es 0.
+localhost_29262 -> 23:07:04.638161 raft.go:449: Mandato 0. He actualizado a mandato 1
+localhost_29262 -> 23:07:04.638303 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:04.638323 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:04.638330 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:05.503000 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:06.282235 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:06.503507 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:07.503500 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:08.504170 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:09.504927 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:10.286267 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:10.505367 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:11.506196 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:12.506861 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:13.506884 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:14.290272 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:14.506916 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:15.508049 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:16.508953 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:17.509606 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
+localhost_29262 -> 23:07:18.495095 raft.go:592: nodo detenido
