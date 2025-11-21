@@ -208,8 +208,6 @@ func enviarEntradas(nr *NodoRaft) {
 				if nodo != nr.Yo {
 
 					if nr.getUltimoIndice() >= nr.NextIndice[nodo] {
-						nr.Logger.Printf("Mandato %d. Actualizando log de %d",
-							nr.MandatoActual, nodo)
 
 						var ultind int
 						var ultmand int
@@ -220,12 +218,16 @@ func enviarEntradas(nr *NodoRaft) {
 							ultind = -1
 							ultmand = -1
 						}
+						entradas := nr.Log[nr.NextIndice[nodo]:]
+						nr.Logger.Println(nr.NextIndice)
 						nr.Mux.Lock()
 						nr.NextIndice[nodo]++
 						nr.Mux.Unlock()
 
-						entradas := make([]Entrada, nr.getUltimoIndice()-nr.NextIndice[nodo]+1)
-						copy(entradas, nr.Log[nr.NextIndice[nodo]:])
+						nr.Logger.Printf("Enviando entrada a nodo %d con ultind %d\n", nodo, ultind)
+						//nr.Logger.Println(nr.Log)
+						//nr.Logger.Println(entradas)
+
 						var resultados Results
 						go nr.enviarOperacion(nodo,
 							&ArgAppendEntries{
@@ -534,14 +536,14 @@ func (nr *NodoRaft) someterOperacion(operacion TipoOperacion) (int, int,
 // (presente en la mayoria de servidores)
 func (nr *NodoRaft) esperarComprometido(indice int, done chan bool) {
 	for {
+		nr.Mux.Lock()
 		nodosComprometidos := 0
 		for idNodo := 0; idNodo < len(nr.Nodos); idNodo++ {
 			if nr.LastIndice[idNodo] >= indice {
-				nr.Mux.Lock()
 				nodosComprometidos++
-				nr.Mux.Unlock()
 			}
 		}
+		nr.Mux.Unlock()
 		if nodosComprometidos >= ((len(nr.Nodos) / 2) + 1) {
 			nr.Logger.Printf(
 				"Comprometidos %d\n",
@@ -558,10 +560,11 @@ func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 	resultados *Results) bool {
 
 	err := nr.Nodos[idNodo].CallTimeout("NodoRaft.AppendEntries", args,
-		&resultados, tRespCall)
+		resultados, tRespCall)
 
-	if err != nil || !resultados.Exito { //error
-		nr.Logger.Printf("Error al actualizar log de %d", idNodo)
+	if err != nil { //error
+		nr.Logger.Printf("Error al llamar AppendEntries en %d, %s", idNodo, err.Error())
+		time.Sleep(1 * time.Second)
 		nr.Mux.Lock()
 		nr.NextIndice[idNodo]--
 		nr.Mux.Unlock()
@@ -780,6 +783,9 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 	//si esta vacio se trata de un latido,
 	//sino, se esta replicando una nueva entrada
 	//en el registro de operaciones
+
+	//nr.Logger.Println(args.Entradas)
+
 	if args.Entradas == nil {
 		//fmt.Printf("Mandato %d. Latido recibido\n", nr.MandatoActual)
 		if (args.MandLider >= nr.MandatoActual) && (args.IdLider != nr.IdLider) {
@@ -826,14 +832,14 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 
 		//4. Append any new entries not already in the log
 		//se introduce nueva entrada en el log
-		//nr.Logger.Printf("(%d,%d,%s,%s,%s)", args.Entradas.Operacion.Indice, args.Entradas.Mandato, args.Entradas.Operacion.Operacion.Operacion, args.Entradas.Operacion.Operacion.Clave, args.Entradas.Operacion.Operacion.Valor)
-		nr.addEntradas(args.Entradas)
-		results.Exito = true
-		results.MandatoActual = nr.MandatoActual
 		nr.Logger.Printf(
 			"Mandato %d. Entrada comprometida. ult: %d prevlogindice: %d\n",
 			nr.MandatoActual, nr.getUltimoIndice(), args.PrevLogIndice,
 		)
+		nr.addEntradas(args.Entradas)
+		results.Exito = true
+		results.MandatoActual = nr.MandatoActual
+
 		// 5. If leaderCommit > commitIndex, set commitIndex =
 		// min(leaderCommit, index of last new entry)
 		if args.LiderCommit > nr.CommitIndice {
@@ -853,15 +859,13 @@ func min(a, b int) int {
 
 func (nr *NodoRaft) addEntrada(entrada Entrada) {
 	nr.Log = append(nr.Log, entrada)
+	nr.Logger.Printf("(%d,%d,%s,%s,%s)", entrada.Operacion.Indice, entrada.Mandato, entrada.Operacion.Operacion.Operacion, entrada.Operacion.Operacion.Clave, entrada.Operacion.Operacion.Valor)
 	nr.LastIndice[nr.Yo] = entrada.Operacion.Indice
 }
 
 func (nr *NodoRaft) addEntradas(entradas []Entrada) {
-
-	nr.Log = append(nr.Log, entradas...)
-	if len(entradas) > 0 {
-		ultima := entradas[len(entradas)-1]
-		nr.LastIndice[nr.Yo] = ultima.Operacion.Indice
+	for _, entrada := range entradas {
+		nr.addEntrada(entrada)
 	}
 }
 
@@ -924,4 +928,21 @@ func (nr *NodoRaft) enviarPeticionVoto(nodo int, args *ArgsPeticionVoto,
 	}
 
 	return true
+}
+
+type EstadoLogRemoto struct {
+	Len int
+}
+
+func (nr *NodoRaft) ObtenerLogNodo(args Vacio, reply *EstadoLogRemoto) error {
+	reply.Len = nr.obtenerLogNodo()
+	return nil
+}
+
+func (nr *NodoRaft) obtenerLogNodo() int {
+	len := nr.getUltimoIndice()
+
+	nr.Logger.Printf("Devolviendo log: %d\n", len)
+
+	return len
 }

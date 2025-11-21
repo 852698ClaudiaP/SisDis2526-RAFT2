@@ -1,26 +1,118 @@
-localhost_29261 -> 23:07:02.698897 raft.go:174: logger initialized
-localhost_29261 -> 23:07:02.699776 raft.go:871: Mandato 0. Mi nuevo lider es 0.
-localhost_29261 -> 23:07:02.699790 raft.go:449: Mandato 0. He actualizado a mandato 1
-localhost_29261 -> 23:07:02.699879 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:02.700062 raft.go:811: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29261 -> 23:07:02.700094 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:02.700539 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:03.502243 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:04.502028 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:05.502950 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:06.282256 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:06.503324 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:07.503478 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:08.504245 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:09.504913 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:10.286209 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:10.505370 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:11.506220 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:12.506880 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:13.506905 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:14.290294 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:14.506891 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:15.507990 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:16.508945 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:17.509598 raft.go:296: Mandato 1. He recibido latido, mi lider es 0
-localhost_29261 -> 23:07:18.494676 raft.go:592: nodo detenido
+localhost_29261 -> 12:08:28.705667 raft.go:174: logger initialized
+localhost_29261 -> 12:08:28.964167 raft.go:875: Mandato 0. Mi nuevo lider es 0.
+localhost_29261 -> 12:08:28.964198 raft.go:451: Mandato 0. He actualizado a mandato 1
+localhost_29261 -> 12:08:28.964328 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:29.380414 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.380414 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.380969 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.381113 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.381207 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.381259 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.381440 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.381493 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.381578 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.381608 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.381735 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.381749 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.381749 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.381926 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.382321 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.382392 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.382560 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.382597 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.382619 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.382613 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.382954 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.383131 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.383274 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.383342 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.383940 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.384115 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.384259 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.384393 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29261 -> 12:08:29.384436 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29261 -> 12:08:29.384522 raft.go:835: Mandato 1. Entrada comprometida. ult: -1 prevlogindice: 0
+localhost_29261 -> 12:08:29.384537 raft.go:862: (2,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384545 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384558 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384530 raft.go:835: Mandato 1. Entrada comprometida. ult: -1 prevlogindice: 0
+localhost_29261 -> 12:08:29.384601 raft.go:835: Mandato 1. Entrada comprometida. ult: 2 prevlogindice: 0
+localhost_29261 -> 12:08:29.384618 raft.go:862: (2,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384625 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384630 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384649 raft.go:835: Mandato 1. Entrada comprometida. ult: 6 prevlogindice: 2
+localhost_29261 -> 12:08:29.384658 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384605 raft.go:862: (2,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384697 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384703 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384759 raft.go:835: Mandato 1. Entrada comprometida. ult: 9 prevlogindice: 1
+localhost_29261 -> 12:08:29.384768 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384784 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384828 raft.go:835: Mandato 1. Entrada comprometida. ult: 11 prevlogindice: 2
+localhost_29261 -> 12:08:29.384837 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384930 raft.go:835: Mandato 1. Entrada comprometida. ult: 12 prevlogindice: 1
+localhost_29261 -> 12:08:29.384940 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.384945 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385083 raft.go:835: Mandato 1. Entrada comprometida. ult: 14 prevlogindice: -1
+localhost_29261 -> 12:08:29.385092 raft.go:862: (1,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385098 raft.go:862: (2,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385107 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385112 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385117 raft.go:835: Mandato 1. Entrada comprometida. ult: 18 prevlogindice: 2
+localhost_29261 -> 12:08:29.385125 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385142 raft.go:835: Mandato 1. Entrada comprometida. ult: 19 prevlogindice: 1
+localhost_29261 -> 12:08:29.385156 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385163 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385237 raft.go:835: Mandato 1. Entrada comprometida. ult: 21 prevlogindice: 2
+localhost_29261 -> 12:08:29.385249 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385258 raft.go:835: Mandato 1. Entrada comprometida. ult: 22 prevlogindice: 0
+localhost_29261 -> 12:08:29.385266 raft.go:862: (2,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385271 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385276 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385239 raft.go:835: Mandato 1. Entrada comprometida. ult: 21 prevlogindice: 2
+localhost_29261 -> 12:08:29.385289 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385302 raft.go:835: Mandato 1. Entrada comprometida. ult: 26 prevlogindice: 2
+localhost_29261 -> 12:08:29.385321 raft.go:835: Mandato 1. Entrada comprometida. ult: 26 prevlogindice: 1
+localhost_29261 -> 12:08:29.385323 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385328 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385364 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385490 raft.go:835: Mandato 1. Entrada comprometida. ult: 29 prevlogindice: 2
+localhost_29261 -> 12:08:29.385500 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.385326 raft.go:835: Mandato 1. Entrada comprometida. ult: 27 prevlogindice: 2
+localhost_29261 -> 12:08:29.385992 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386068 raft.go:835: Mandato 1. Entrada comprometida. ult: 31 prevlogindice: 2
+localhost_29261 -> 12:08:29.386129 raft.go:835: Mandato 1. Entrada comprometida. ult: 32 prevlogindice: 1
+localhost_29261 -> 12:08:29.386142 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386149 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386130 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386188 raft.go:835: Mandato 1. Entrada comprometida. ult: 34 prevlogindice: 1
+localhost_29261 -> 12:08:29.386212 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386219 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386215 raft.go:835: Mandato 1. Entrada comprometida. ult: 35 prevlogindice: 1
+localhost_29261 -> 12:08:29.386081 raft.go:835: Mandato 1. Entrada comprometida. ult: 31 prevlogindice: 1
+localhost_29261 -> 12:08:29.386253 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386261 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386235 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386306 raft.go:835: Mandato 1. Entrada comprometida. ult: 39 prevlogindice: 1
+localhost_29261 -> 12:08:29.386310 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386314 raft.go:862: (3,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.386321 raft.go:862: (4,1,escribir,clave,valor)
+localhost_29261 -> 12:08:29.965029 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:30.380444 raft.go:835: Mandato 1. Entrada comprometida. ult: 42 prevlogindice: 3
+localhost_29261 -> 12:08:30.414820 raft.go:862: (5,1,escribir,clave,valor)
+localhost_29261 -> 12:08:30.965074 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:31.416309 raft.go:835: Mandato 1. Entrada comprometida. ult: 43 prevlogindice: 3
+localhost_29261 -> 12:08:31.416332 raft.go:862: (5,1,escribir,clave,valor)
+localhost_29261 -> 12:08:31.965295 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:32.966357 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:33.967126 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:34.967335 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:35.968061 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:36.968218 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:37.968261 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:38.969046 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:39.969334 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:40.970050 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:41.971171 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:42.971880 raft.go:298: Mandato 1. He recibido latido, mi lider es 0
+localhost_29261 -> 12:08:43.972659 raft.go:298: Mandato 1. He recibido latido, mi lider es 0

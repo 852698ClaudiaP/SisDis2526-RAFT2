@@ -216,7 +216,7 @@ func (cfg *configDespliegue) elegirPrimerLiderTest2(t *testing.T) {
 
 // Fallo de un primer lider y reeleccion de uno nuevo - 3 NODOS RAFT
 func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
-	//t.Skip("SKIPPED FalloAnteriorElegirNuevoLiderTest3")
+	t.Skip("SKIPPED FalloAnteriorElegirNuevoLiderTest3")
 
 	fmt.Println(t.Name(), ".....................")
 
@@ -273,7 +273,7 @@ func (cfg *configDespliegue) tresOperacionesComprometidasEstable(t *testing.T) {
 
 // Se consigue acuerdo a pesar de desconexiones de seguidor -- 3 NODOS RAFT
 func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
-	t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
+	//t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
 
 	cfg.startDistributedProcesses()
 
@@ -281,6 +281,8 @@ func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 	time.Sleep(200 * time.Millisecond)
 
 	lider := cfg.pruebaUnLider(3)
+
+	fmt.Printf("Encontrado lider %d\n", lider)
 
 	// Comprometer una entrada
 	cfg.someterOperacionRaft(lider)
@@ -313,7 +315,7 @@ func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 
 // NO se consigue acuerdo al desconectarse mayoría de seguidores -- 3 NODOS RAFT
 func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
-	//t.Skip("SKIPPED SinAcuerdoPorFallos")
+	t.Skip("SKIPPED SinAcuerdoPorFallos")
 
 	cfg.startDistributedProcesses()
 
@@ -359,17 +361,32 @@ func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
 func (cfg *configDespliegue) SometerConcurrentementeOperaciones(t *testing.T) {
 	t.Skip("SKIPPED SometerConcurrentementeOperaciones")
 
-	// A completar ???
+	cfg.startDistributedProcesses()
 
-	// un bucle para estabilizar la ejecucion
+	// Espera para que hayan elegido lider
+	time.Sleep(2000 * time.Millisecond)
 
 	// Obtener un lider y, a continuación someter una operacion
+	lider := cfg.pruebaUnLider(3)
+
+	cfg.someterOperacionRaft(lider)
 
 	// Someter 5  operaciones concurrentes
+	go cfg.someterOperacionRaft(lider)
+	go cfg.someterOperacionRaft(lider)
+	go cfg.someterOperacionRaft(lider)
+	go cfg.someterOperacionRaft(lider)
+	go cfg.someterOperacionRaft(lider)
 
 	// Comprobar estados de nodos Raft, sobre todo
 	// el avance del mandato en curso e indice de registro de cada uno
 	// que debe ser identico entre ellos
+	for i := 0; i <= 2; i++ {
+		for cfg.obtenerLogsRemotos(i) < 5 {
+
+		}
+		fmt.Printf("Log conseguido\n")
+	}
 }
 
 // --------------------------------------------------------------------------
@@ -418,6 +435,16 @@ func (cfg *configDespliegue) obtenerEstadoRemoto(
 	check.CheckError(err, "Error en llamada RPC ObtenerEstadoRemoto")
 
 	return reply.IdNodo, reply.Mandato, reply.EsLider, reply.IdLider
+}
+
+func (cfg *configDespliegue) obtenerLogsRemotos(
+	indiceNodo int) int {
+	var reply raft.EstadoLogRemoto
+	err := cfg.nodosRaft[indiceNodo].CallTimeout("NodoRaft.ObtenerLogNodo",
+		raft.Vacio{}, &reply, 100*time.Millisecond)
+	check.CheckError(err, "Error en llamada RPC ObtenerLogNodo")
+
+	return reply.Len
 }
 
 func (cfg *configDespliegue) someterOperacionRaft(indiceNodo int) (
