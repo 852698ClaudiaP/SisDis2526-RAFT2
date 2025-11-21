@@ -1,248 +1,108 @@
-localhost_29260 -> 12:08:04.006662 raft.go:174: logger initialized
-localhost_29260 -> 12:08:11.951993 raft.go:303: Mandato 0. No he recibido latidos, me vuelvo candidato.
-localhost_29260 -> 12:08:11.952051 raft.go:353: Inicio elección en mandato 1
-localhost_29260 -> 12:08:11.952692 raft.go:926: Mandato 1. Llega voto con valor: true
-localhost_29260 -> 12:08:11.952722 raft.go:321: Mandato 1. He recibido mayoria, me convierto en lider.
-localhost_29260 -> 12:08:12.362166 raft.go:862: (1,1,escribir,clave,valor)
-localhost_29260 -> 12:08:12.362190 raft.go:222: [0 0 0]
-localhost_29260 -> 12:08:12.362248 raft.go:227: Enviando entrada a nodo 1 con ultind -1
-localhost_29260 -> 12:08:12.362274 raft.go:222: [0 1 0]
-localhost_29260 -> 12:08:12.362280 raft.go:227: Enviando entrada a nodo 2 con ultind -1
-localhost_29260 -> 12:08:12.362938 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:12.362969 raft.go:548: Comprometidos 2
-localhost_29260 -> 12:08:12.362985 raft.go:526: Mandato 1. Entrada comprometida
-localhost_29260 -> 12:08:12.363007 raft.go:582: Actualizado log de 2
-localhost_29260 -> 12:08:16.366705 raft.go:862: (2,1,escribir,clave,valor)
-localhost_29260 -> 12:08:16.366706 raft.go:222: [0 1 1]
-localhost_29260 -> 12:08:16.366757 raft.go:227: Enviando entrada a nodo 1 con ultind 0
-localhost_29260 -> 12:08:16.366769 raft.go:222: [0 2 1]
-localhost_29260 -> 12:08:16.366787 raft.go:227: Enviando entrada a nodo 2 con ultind 0
-localhost_29260 -> 12:08:16.367257 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:16.367279 raft.go:548: Comprometidos 2
-localhost_29260 -> 12:08:16.367294 raft.go:526: Mandato 1. Entrada comprometida
-localhost_29260 -> 12:08:16.367368 raft.go:582: Actualizado log de 2
-localhost_29260 -> 12:08:20.371591 raft.go:862: (3,1,escribir,clave,valor)
-localhost_29260 -> 12:08:20.371591 raft.go:222: [0 2 2]
-localhost_29260 -> 12:08:20.371660 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:20.371671 raft.go:222: [0 3 2]
-localhost_29260 -> 12:08:20.371677 raft.go:227: Enviando entrada a nodo 2 con ultind 1
-localhost_29260 -> 12:08:20.371835 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:20.372282 raft.go:582: Actualizado log de 2
-localhost_29260 -> 12:08:20.372299 raft.go:548: Comprometidos 2
-localhost_29260 -> 12:08:20.372319 raft.go:526: Mandato 1. Entrada comprometida
-localhost_29260 -> 12:08:21.372431 raft.go:222: [0 2 3]
-localhost_29260 -> 12:08:21.372475 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:21.372811 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:22.373679 raft.go:222: [0 2 3]
-localhost_29260 -> 12:08:22.373742 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:22.374118 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:23.374975 raft.go:222: [0 2 3]
-localhost_29260 -> 12:08:23.375018 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:23.375333 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:24.375198 raft.go:862: (4,1,escribir,clave,valor)
-localhost_29260 -> 12:08:24.375198 raft.go:222: [0 3 3]
-localhost_29260 -> 12:08:24.375255 raft.go:227: Enviando entrada a nodo 2 con ultind 2
-localhost_29260 -> 12:08:24.375266 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:24.375273 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:24.375384 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:24.375390 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:24.375463 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:24.375582 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:24.375910 raft.go:582: Actualizado log de 2
-localhost_29260 -> 12:08:24.375958 raft.go:548: Comprometidos 2
-localhost_29260 -> 12:08:24.375970 raft.go:526: Mandato 1. Entrada comprometida
-localhost_29260 -> 12:08:25.375853 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:25.375890 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:25.375900 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:25.375905 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:25.376090 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:25.376122 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:26.377008 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:26.377044 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:26.377062 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:26.377066 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:26.377318 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:26.377318 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:27.377852 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:27.377886 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:27.377898 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:27.377904 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:27.378088 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:27.378114 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:28.378921 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:28.378957 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:28.378990 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:28.378997 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:28.379156 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:28.379182 raft.go:566: Error al llamar AppendEntries en 1, dial tcp 127.0.0.1:29261: connect: connection refused
-localhost_29260 -> 12:08:29.379857 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.379899 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.379911 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.379917 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.380650 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.380676 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.380694 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.380704 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.380712 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.380703 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.380785 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.380795 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.380802 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.380808 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381124 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381141 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381153 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381161 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.381166 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381271 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381286 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381295 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381303 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.381310 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381366 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381376 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381384 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381389 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.381393 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381399 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381410 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381431 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381437 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.381443 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381593 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381604 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381616 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381623 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.381628 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381675 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381688 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381694 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381705 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.381711 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381742 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381753 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381759 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381764 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.381771 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381857 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381880 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381887 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381893 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.381899 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.381946 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381954 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381958 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.381971 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.381956 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.381978 raft.go:222: [0 1 4]
-localhost_29260 -> 12:08:29.381989 raft.go:227: Enviando entrada a nodo 1 con ultind 0
-localhost_29260 -> 12:08:29.381997 raft.go:222: [0 1 4]
-localhost_29260 -> 12:08:29.382003 raft.go:227: Enviando entrada a nodo 1 con ultind 0
-localhost_29260 -> 12:08:29.382010 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.382016 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.382022 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.382028 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.382050 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.382060 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.382068 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.382074 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.382080 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.382490 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.382506 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.382518 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.382524 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.382530 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.382877 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.382910 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.382925 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.382944 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.382953 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.382927 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.382948 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.382965 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.382978 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.382985 raft.go:222: [0 1 4]
-localhost_29260 -> 12:08:29.382993 raft.go:227: Enviando entrada a nodo 1 con ultind 0
-localhost_29260 -> 12:08:29.382998 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.383004 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.383015 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.383020 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.383283 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.382957 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.383830 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384008 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384062 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384077 raft.go:222: [0 0 4]
-localhost_29260 -> 12:08:29.384079 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384085 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.384099 raft.go:222: [0 0 4]
-localhost_29260 -> 12:08:29.384106 raft.go:227: Enviando entrada a nodo 1 con ultind -1
-localhost_29260 -> 12:08:29.384112 raft.go:222: [0 1 4]
-localhost_29260 -> 12:08:29.384117 raft.go:227: Enviando entrada a nodo 1 con ultind 0
-localhost_29260 -> 12:08:29.384123 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.384128 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.384133 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.384138 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.384148 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384156 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.384161 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.384166 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.384171 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.384223 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384230 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.384235 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.384240 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.384244 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.384361 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384371 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.384375 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.384380 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.384384 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.384499 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384510 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.384515 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.384520 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.384526 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.384595 raft.go:573: Error al actualizar log de 1
-localhost_29260 -> 12:08:29.384606 raft.go:222: [0 2 4]
-localhost_29260 -> 12:08:29.384616 raft.go:227: Enviando entrada a nodo 1 con ultind 1
-localhost_29260 -> 12:08:29.384623 raft.go:222: [0 3 4]
-localhost_29260 -> 12:08:29.384628 raft.go:227: Enviando entrada a nodo 1 con ultind 2
-localhost_29260 -> 12:08:29.384697 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.384752 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.384809 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.384861 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.384887 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.384975 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385061 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385217 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385302 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385388 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385473 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385474 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385477 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385481 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385470 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.385704 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.386236 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.386326 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.386409 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.386404 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.386449 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.386478 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:29.386499 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:30.380000 raft.go:862: (5,1,escribir,clave,valor)
-localhost_29260 -> 12:08:30.380001 raft.go:222: [0 4 4]
-localhost_29260 -> 12:08:30.380059 raft.go:227: Enviando entrada a nodo 1 con ultind 3
-localhost_29260 -> 12:08:30.380074 raft.go:222: [0 5 4]
-localhost_29260 -> 12:08:30.380086 raft.go:227: Enviando entrada a nodo 2 con ultind 3
-localhost_29260 -> 12:08:30.400447 raft.go:566: Error al llamar AppendEntries en 2, Timeout in CallTimeout with method: NodoRaft.AppendEntries, args: &{1 0 3 1 [{1 {5 {escribir clave valor}}}] 0}
-localhost_29260 -> 12:08:30.400457 raft.go:566: Error al llamar AppendEntries en 1, Timeout in CallTimeout with method: NodoRaft.AppendEntries, args: &{1 0 3 1 [{1 {5 {escribir clave valor}}}] 0}
-localhost_29260 -> 12:08:31.415783 raft.go:222: [0 4 4]
-localhost_29260 -> 12:08:31.415820 raft.go:227: Enviando entrada a nodo 1 con ultind 3
-localhost_29260 -> 12:08:31.415831 raft.go:222: [0 5 4]
-localhost_29260 -> 12:08:31.415835 raft.go:227: Enviando entrada a nodo 2 con ultind 3
-localhost_29260 -> 12:08:31.416482 raft.go:582: Actualizado log de 2
-localhost_29260 -> 12:08:31.416483 raft.go:582: Actualizado log de 1
-localhost_29260 -> 12:08:31.416500 raft.go:548: Comprometidos 2
-localhost_29260 -> 12:08:31.416521 raft.go:526: Mandato 1. Entrada comprometida
+localhost_29260 -> 12:27:08.020192 raft.go:174: logger initialized
+localhost_29260 -> 12:27:08.542570 raft.go:877: Mandato 0. Mi nuevo lider es 2.
+localhost_29260 -> 12:27:08.542604 raft.go:451: Mandato 0. He actualizado a mandato 1
+localhost_29260 -> 12:27:08.542750 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:08.665592 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.666176 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.666295 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.666639 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.666702 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.666746 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.666943 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.667128 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.667174 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.667220 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.667250 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.667323 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.667333 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.667419 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.667456 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.668076 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.668452 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
+localhost_29260 -> 12:27:08.668506 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.668600 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.668663 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.668741 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
+localhost_29260 -> 12:27:08.668752 raft.go:835: Mandato 1. Entrada comprometida. ult: -1 prevlogindice: 0
+localhost_29260 -> 12:27:08.668766 raft.go:863: (2,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.668782 raft.go:865: [{1 {2 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.668865 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.668942 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.668888 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.668943 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.668989 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.669029 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.669054 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.669099 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.669128 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.669239 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.669280 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.669926 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.669933 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.670156 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.670457 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.670616 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.670672 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.671309 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
+localhost_29260 -> 12:27:08.671882 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
+localhost_29260 -> 12:27:08.671892 raft.go:835: Mandato 1. Entrada comprometida. ult: 0 prevlogindice: -1
+localhost_29260 -> 12:27:08.671905 raft.go:863: (1,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.671912 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.671917 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=1) para prevIndice=2
+localhost_29260 -> 12:27:08.671970 raft.go:817: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=1) para prevIndice=2
+localhost_29260 -> 12:27:08.672027 raft.go:835: Mandato 1. Entrada comprometida. ult: 1 prevlogindice: 1
+localhost_29260 -> 12:27:08.672036 raft.go:863: (3,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672041 raft.go:835: Mandato 1. Entrada comprometida. ult: 2 prevlogindice: 1
+localhost_29260 -> 12:27:08.672043 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672050 raft.go:863: (3,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672059 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672049 raft.go:835: Mandato 1. Entrada comprometida. ult: 2 prevlogindice: 0
+localhost_29260 -> 12:27:08.672109 raft.go:863: (2,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672115 raft.go:835: Mandato 1. Entrada comprometida. ult: 4 prevlogindice: 2
+localhost_29260 -> 12:27:08.672125 raft.go:863: (4,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672116 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672131 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672170 raft.go:835: Mandato 1. Entrada comprometida. ult: 5 prevlogindice: 1
+localhost_29260 -> 12:27:08.672179 raft.go:863: (3,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672184 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672609 raft.go:835: Mandato 1. Entrada comprometida. ult: 6 prevlogindice: 2
+localhost_29260 -> 12:27:08.672616 raft.go:835: Mandato 1. Entrada comprometida. ult: 6 prevlogindice: 1
+localhost_29260 -> 12:27:08.672630 raft.go:863: (3,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672636 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672612 raft.go:835: Mandato 1. Entrada comprometida. ult: 6 prevlogindice: 2
+localhost_29260 -> 12:27:08.672622 raft.go:863: (4,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672757 raft.go:863: (4,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672788 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672805 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672876 raft.go:835: Mandato 1. Entrada comprometida. ult: 9 prevlogindice: 1
+localhost_29260 -> 12:27:08.672890 raft.go:863: (3,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672896 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.672879 raft.go:835: Mandato 1. Entrada comprometida. ult: 9 prevlogindice: 2
+localhost_29260 -> 12:27:08.672950 raft.go:863: (4,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.672957 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
+localhost_29260 -> 12:27:08.673822 raft.go:835: Mandato 1. Entrada comprometida. ult: 11 prevlogindice: 1
+localhost_29260 -> 12:27:08.673878 raft.go:863: (3,1,escribir,clave,valor)
+localhost_29260 -> 12:27:08.674300 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
+localhost_29260 -> 12:27:09.543385 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:09.666853 raft.go:835: Mandato 1. Entrada comprometida. ult: 12 prevlogindice: 3
+localhost_29260 -> 12:27:09.666879 raft.go:863: (5,1,escribir,clave,valor)
+localhost_29260 -> 12:27:09.666887 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {5 {escribir clave valor}}}]
+localhost_29260 -> 12:27:10.544274 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:11.545340 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:12.546325 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:13.547310 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:13.670575 raft.go:835: Mandato 1. Entrada comprometida. ult: 13 prevlogindice: 4
+localhost_29260 -> 12:27:13.670603 raft.go:863: (6,1,escribir,clave,valor)
+localhost_29260 -> 12:27:13.670612 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}}]
+localhost_29260 -> 12:27:14.548369 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:15.549307 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:16.550389 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:17.551311 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:17.674561 raft.go:835: Mandato 1. Entrada comprometida. ult: 14 prevlogindice: 5
+localhost_29260 -> 12:27:17.674589 raft.go:863: (7,1,escribir,clave,valor)
+localhost_29260 -> 12:27:17.674598 raft.go:865: [{1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}} {1 {7 {escribir clave valor}}}]
+localhost_29260 -> 12:27:18.551493 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:19.552149 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:20.552237 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:21.552934 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
+localhost_29260 -> 12:27:21.878519 raft.go:595: nodo detenido

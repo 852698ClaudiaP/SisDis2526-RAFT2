@@ -218,13 +218,13 @@ func enviarEntradas(nr *NodoRaft) {
 							ultind = -1
 							ultmand = -1
 						}
-						entradas := nr.Log[nr.NextIndice[nodo]:]
-						nr.Logger.Println(nr.NextIndice)
+						entrada := nr.Log[nr.NextIndice[nodo]]
+						//nr.Logger.Println(nr.NextIndice)
 						nr.Mux.Lock()
 						nr.NextIndice[nodo]++
 						nr.Mux.Unlock()
 
-						nr.Logger.Printf("Enviando entrada a nodo %d con ultind %d\n", nodo, ultind)
+						//nr.Logger.Printf("Enviando entrada a nodo %d con ultind %d\n", nodo, ultind)
 						//nr.Logger.Println(nr.Log)
 						//nr.Logger.Println(entradas)
 
@@ -235,7 +235,7 @@ func enviarEntradas(nr *NodoRaft) {
 								nr.Yo,
 								ultind,
 								ultmand,
-								entradas,
+								entrada,
 								nr.CommitIndice,
 							},
 							&resultados)
@@ -403,7 +403,7 @@ func enviarLatidosNodos(nr *NodoRaft) {
 					nr.Yo,
 					nr.getUltimoIndice(),
 					nr.getUltimoMandato(),
-					nil,
+					Entrada{},
 					nr.CommitIndice,
 				},
 				&resultados)
@@ -766,7 +766,7 @@ type ArgAppendEntries struct {
 	// Mandato de la entrada anterior
 	PrevLogMandato int
 	// Entrada a añadir al log (por ahora solo una)
-	Entradas []Entrada
+	Entrada Entrada
 	// Commit index del lider
 	LiderCommit int
 }
@@ -786,7 +786,7 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 
 	//nr.Logger.Println(args.Entradas)
 
-	if args.Entradas == nil {
+	if args.Entrada == (Entrada{}) {
 		//fmt.Printf("Mandato %d. Latido recibido\n", nr.MandatoActual)
 		if (args.MandLider >= nr.MandatoActual) && (args.IdLider != nr.IdLider) {
 
@@ -836,14 +836,15 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 			"Mandato %d. Entrada comprometida. ult: %d prevlogindice: %d\n",
 			nr.MandatoActual, nr.getUltimoIndice(), args.PrevLogIndice,
 		)
-		nr.addEntradas(args.Entradas)
+		nr.addEntrada(args.Entrada)
 		results.Exito = true
 		results.MandatoActual = nr.MandatoActual
 
 		// 5. If leaderCommit > commitIndex, set commitIndex =
 		// min(leaderCommit, index of last new entry)
 		if args.LiderCommit > nr.CommitIndice {
-			nr.CommitIndice = min(args.LiderCommit, args.PrevLogIndice+len(args.Entradas))
+			//nr.CommitIndice = min(args.LiderCommit, args.PrevLogIndice+len(args.Entradas))
+			nr.CommitIndice = min(args.LiderCommit, args.PrevLogIndice+1)
 		}
 	}
 
@@ -861,6 +862,7 @@ func (nr *NodoRaft) addEntrada(entrada Entrada) {
 	nr.Log = append(nr.Log, entrada)
 	nr.Logger.Printf("(%d,%d,%s,%s,%s)", entrada.Operacion.Indice, entrada.Mandato, entrada.Operacion.Operacion.Operacion, entrada.Operacion.Operacion.Clave, entrada.Operacion.Operacion.Valor)
 	nr.LastIndice[nr.Yo] = entrada.Operacion.Indice
+	nr.Logger.Println(nr.Log)
 }
 
 func (nr *NodoRaft) addEntradas(entradas []Entrada) {
