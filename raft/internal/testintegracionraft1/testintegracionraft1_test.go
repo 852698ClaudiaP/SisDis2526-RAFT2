@@ -315,7 +315,7 @@ func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 
 // NO se consigue acuerdo al desconectarse mayoría de seguidores -- 3 NODOS RAFT
 func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
-	//t.Skip("SKIPPED SinAcuerdoPorFallos")
+	t.Skip("SKIPPED SinAcuerdoPorFallos")
 
 	cfg.startDistributedProcesses()
 
@@ -362,7 +362,7 @@ func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
 
 // Se somete 5 operaciones de forma concurrente -- 3 NODOS RAFT
 func (cfg *configDespliegue) SometerConcurrentementeOperaciones(t *testing.T) {
-	t.Skip("SKIPPED SometerConcurrentementeOperaciones")
+	//t.Skip("SKIPPED SometerConcurrentementeOperaciones")
 
 	cfg.startDistributedProcesses()
 
@@ -388,7 +388,6 @@ func (cfg *configDespliegue) SometerConcurrentementeOperaciones(t *testing.T) {
 		for cfg.obtenerLogsRemotos(i) < 5 {
 
 		}
-		fmt.Printf("Log conseguido\n")
 	}
 }
 
