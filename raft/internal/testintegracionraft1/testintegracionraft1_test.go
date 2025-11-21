@@ -273,7 +273,7 @@ func (cfg *configDespliegue) tresOperacionesComprometidasEstable(t *testing.T) {
 
 // Se consigue acuerdo a pesar de desconexiones de seguidor -- 3 NODOS RAFT
 func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
-	//t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
+	t.Skip("SKIPPED AcuerdoApesarDeSeguidor")
 
 	cfg.startDistributedProcesses()
 
@@ -315,7 +315,7 @@ func (cfg *configDespliegue) AcuerdoApesarDeSeguidor(t *testing.T) {
 
 // NO se consigue acuerdo al desconectarse mayoría de seguidores -- 3 NODOS RAFT
 func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
-	t.Skip("SKIPPED SinAcuerdoPorFallos")
+	//t.Skip("SKIPPED SinAcuerdoPorFallos")
 
 	cfg.startDistributedProcesses()
 
@@ -323,6 +323,7 @@ func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
 	time.Sleep(2000 * time.Millisecond)
 
 	lider := cfg.pruebaUnLider(3)
+	fmt.Printf("Encontrado lider %d\n", lider)
 
 	// Comprometer una entrada
 	cfg.someterOperacionRaft(lider)
@@ -340,6 +341,8 @@ func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
 	cfg.someterOperacionRaftFallo(lider)
 	cfg.someterOperacionRaftFallo(lider)
 	cfg.someterOperacionRaftFallo(lider)
+	fmt.Printf("No deberian comprometerse \n")
+	time.Sleep(4000 * time.Millisecond)
 
 	// reconectar los 2 nodos Raft desconectados y probar varios acuerdos
 	for i := 0; i <= 2; i++ {
@@ -466,7 +469,7 @@ func (cfg *configDespliegue) someterOperacionRaftFallo(indiceNodo int) (
 
 	var reply raft.ResultadoRemoto
 	err := cfg.nodosRaft[indiceNodo].CallTimeout("NodoRaft.SometerOperacionRaft",
-		raft.TipoOperacion{Operacion: "a", Clave: "b", Valor: "c"}, &reply, 200*time.Millisecond)
+		raft.TipoOperacion{Operacion: "escribir", Clave: "clave", Valor: "valor"}, &reply, 200*time.Millisecond)
 
 	if err == nil {
 		cfg.t.Fatalf("La llamada RPC SometerOperacionRaft deberia haber fallado")

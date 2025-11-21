@@ -1,288 +1,47 @@
-localhost_29262 -> 13:23:06.008666 raft.go:174: logger initialized
-localhost_29262 -> 13:23:12.389553 raft.go:304: Mandato 0. No he recibido latidos, me vuelvo candidato.
-localhost_29262 -> 13:23:12.389624 raft.go:354: Inicio elección en mandato 1
-localhost_29262 -> 13:23:12.390987 raft.go:940: Mandato 1. Llega voto con valor: true
-localhost_29262 -> 13:23:12.391040 raft.go:322: Mandato 1. He recibido mayoria, me convierto en lider.
-localhost_29262 -> 13:23:12.642414 raft.go:875: (1,1,escribir,clave,valor)
-localhost_29262 -> 13:23:12.642467 raft.go:877: [{1 {1 {escribir clave valor}}}]
-localhost_29262 -> 13:23:12.643431 raft.go:585: Actualizado log de 0 con PrevLogIndice -1
-localhost_29262 -> 13:23:12.643477 raft.go:586: {1 {1 {escribir clave valor}}}
-localhost_29262 -> 13:23:12.643500 raft.go:549: Comprometidos 2
-localhost_29262 -> 13:23:12.643522 raft.go:527: Mandato 1. Entrada comprometida
-localhost_29262 -> 13:23:12.643819 raft.go:585: Actualizado log de 1 con PrevLogIndice -1
-localhost_29262 -> 13:23:12.643839 raft.go:586: {1 {1 {escribir clave valor}}}
-localhost_29262 -> 13:23:16.648618 raft.go:875: (1,2,escribir,clave,valor)
-localhost_29262 -> 13:23:16.648667 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}}]
-localhost_29262 -> 13:23:16.649286 raft.go:585: Actualizado log de 0 con PrevLogIndice 0
-localhost_29262 -> 13:23:16.649306 raft.go:586: {1 {2 {escribir clave valor}}}
-localhost_29262 -> 13:23:16.649319 raft.go:549: Comprometidos 2
-localhost_29262 -> 13:23:16.649333 raft.go:527: Mandato 1. Entrada comprometida
-localhost_29262 -> 13:23:16.649442 raft.go:585: Actualizado log de 1 con PrevLogIndice 0
-localhost_29262 -> 13:23:16.649465 raft.go:586: {1 {2 {escribir clave valor}}}
-localhost_29262 -> 13:23:20.653360 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29262 -> 13:23:20.653410 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29262 -> 13:23:20.653584 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:20.654154 raft.go:585: Actualizado log de 1 con PrevLogIndice 1
-localhost_29262 -> 13:23:20.654186 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:20.654201 raft.go:549: Comprometidos 2
-localhost_29262 -> 13:23:20.654212 raft.go:527: Mandato 1. Entrada comprometida
-localhost_29262 -> 13:23:21.655033 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:22.656327 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:23.657702 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:24.657415 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29262 -> 13:23:24.657457 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29262 -> 13:23:24.657655 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:24.658006 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:24.658245 raft.go:585: Actualizado log de 1 con PrevLogIndice 2
-localhost_29262 -> 13:23:24.658287 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:24.658314 raft.go:549: Comprometidos 2
-localhost_29262 -> 13:23:24.658330 raft.go:527: Mandato 1. Entrada comprometida
-localhost_29262 -> 13:23:25.658931 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:25.658933 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:26.660220 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:26.660220 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:27.661498 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:27.661513 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:28.661790 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:28.661880 raft.go:567: Error al llamar AppendEntries en 0, dial tcp 127.0.0.1:29260: connect: connection refused
-localhost_29262 -> 13:23:29.662898 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.662925 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.662985 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.663002 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.663436 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.663451 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.663727 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.663743 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.663806 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.663823 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.663859 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.663872 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.664050 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.664064 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.664099 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.664110 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.664273 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.664285 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.664386 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.664400 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.664461 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.664473 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.664720 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.664754 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.664765 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.664788 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.665075 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.665105 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.665115 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.665175 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.665192 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.665202 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.665275 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.665290 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.665404 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 0
-localhost_29262 -> 13:23:29.665417 raft.go:576: {1 {2 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.665428 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.665436 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.665486 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.665507 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.665593 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.665601 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.666150 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.666170 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.666214 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 0
-localhost_29262 -> 13:23:29.666229 raft.go:576: {1 {2 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.666759 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.666815 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667007 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.667022 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667165 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.667175 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667186 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.667226 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667640 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.667658 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667690 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.667704 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667716 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.667721 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667728 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.667751 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667793 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.667811 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667875 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.667890 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667927 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.667939 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667955 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.667959 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.667979 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.667989 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.668070 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.668082 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.668143 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.668163 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.668177 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.668189 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.668289 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.668300 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.668501 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.668515 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.668525 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.668532 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.668576 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 0
-localhost_29262 -> 13:23:29.668602 raft.go:576: {1 {2 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.669292 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.669318 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.669563 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 0
-localhost_29262 -> 13:23:29.669580 raft.go:576: {1 {2 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.669594 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.669610 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.669623 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.669630 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.669693 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.669719 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.669736 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.669754 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.669806 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.669825 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.670856 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.670880 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.670997 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.671008 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.671017 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.671024 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.671032 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.671038 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.671091 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.671104 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.671178 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.671200 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.671275 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.671289 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.671300 raft.go:585: Actualizado log de 0 con PrevLogIndice -1
-localhost_29262 -> 13:23:29.671306 raft.go:586: {1 {1 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.671380 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.671394 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.671437 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.671449 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.672582 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.672603 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.672741 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.672756 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.672768 raft.go:585: Actualizado log de 0 con PrevLogIndice 0
-localhost_29262 -> 13:23:29.672782 raft.go:586: {1 {2 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.672800 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.672837 raft.go:576: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.672881 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.672895 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.672943 raft.go:585: Actualizado log de 0 con PrevLogIndice -1
-localhost_29262 -> 13:23:29.672953 raft.go:586: {1 {1 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.673043 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.673061 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.673093 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.673105 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.673143 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.673153 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.673184 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.673196 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.673878 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.673974 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674009 raft.go:575: Error al actualizar log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674018 raft.go:576: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674042 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674049 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674063 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.674069 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674099 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674106 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674147 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.674177 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674198 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674213 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674229 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674237 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674254 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.674262 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674317 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674333 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674352 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674365 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674404 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.674415 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674617 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.674632 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674768 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674800 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674836 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.674849 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674868 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.674880 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.674935 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.674947 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.675128 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.675147 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.675177 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.675187 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.675664 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.675680 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.675702 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.675726 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676166 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.676186 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676258 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.676273 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676297 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.676316 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676444 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.676455 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676495 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.676508 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676528 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.676537 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676613 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.676630 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676651 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.676657 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676733 raft.go:585: Actualizado log de 0 con PrevLogIndice 0
-localhost_29262 -> 13:23:29.676744 raft.go:586: {1 {2 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676806 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.676822 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676919 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.676933 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.676952 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.676966 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.677055 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.677065 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.677133 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.677147 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.677206 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.677219 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.677298 raft.go:585: Actualizado log de 0 con PrevLogIndice 2
-localhost_29262 -> 13:23:29.677309 raft.go:586: {1 {4 {escribir clave valor}}}
-localhost_29262 -> 13:23:29.677380 raft.go:585: Actualizado log de 0 con PrevLogIndice 1
-localhost_29262 -> 13:23:29.677391 raft.go:586: {1 {3 {escribir clave valor}}}
-localhost_29262 -> 13:23:30.663397 raft.go:875: (1,5,escribir,clave,valor)
-localhost_29262 -> 13:23:30.663446 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}}]
-localhost_29262 -> 13:23:30.664219 raft.go:585: Actualizado log de 1 con PrevLogIndice 3
-localhost_29262 -> 13:23:30.664265 raft.go:586: {1 {5 {escribir clave valor}}}
-localhost_29262 -> 13:23:30.664279 raft.go:549: Comprometidos 2
-localhost_29262 -> 13:23:30.664298 raft.go:527: Mandato 1. Entrada comprometida
-localhost_29262 -> 13:23:30.664305 raft.go:585: Actualizado log de 0 con PrevLogIndice 3
-localhost_29262 -> 13:23:30.664318 raft.go:586: {1 {5 {escribir clave valor}}}
-localhost_29262 -> 13:23:34.668244 raft.go:875: (1,6,escribir,clave,valor)
-localhost_29262 -> 13:23:34.668283 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}}]
-localhost_29262 -> 13:23:34.669076 raft.go:585: Actualizado log de 0 con PrevLogIndice 4
-localhost_29262 -> 13:23:34.669098 raft.go:586: {1 {6 {escribir clave valor}}}
-localhost_29262 -> 13:23:34.669123 raft.go:549: Comprometidos 2
-localhost_29262 -> 13:23:34.669136 raft.go:527: Mandato 1. Entrada comprometida
-localhost_29262 -> 13:23:34.669137 raft.go:585: Actualizado log de 1 con PrevLogIndice 4
-localhost_29262 -> 13:23:34.669156 raft.go:586: {1 {6 {escribir clave valor}}}
-localhost_29262 -> 13:23:38.673081 raft.go:875: (1,7,escribir,clave,valor)
-localhost_29262 -> 13:23:38.673134 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}} {1 {7 {escribir clave valor}}}]
-localhost_29262 -> 13:23:38.673903 raft.go:585: Actualizado log de 1 con PrevLogIndice 5
-localhost_29262 -> 13:23:38.673929 raft.go:586: {1 {7 {escribir clave valor}}}
-localhost_29262 -> 13:23:38.673950 raft.go:549: Comprometidos 2
-localhost_29262 -> 13:23:38.673972 raft.go:527: Mandato 1. Entrada comprometida
-localhost_29262 -> 13:23:38.674012 raft.go:585: Actualizado log de 0 con PrevLogIndice 5
-localhost_29262 -> 13:23:38.674035 raft.go:586: {1 {7 {escribir clave valor}}}
-localhost_29262 -> 13:23:42.879563 raft.go:600: nodo detenido
+localhost_29262 -> 13:36:44.445714 raft.go:174: logger initialized
+localhost_29262 -> 13:36:44.495819 raft.go:815: Mandato 0. (ult=-1) (prevIndice=0)
+localhost_29262 -> 13:36:44.495850 raft.go:820: Mandato 0. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=0
+localhost_29262 -> 13:36:44.496413 raft.go:815: Mandato 0. (ult=-1) (prevIndice=-1)
+localhost_29262 -> 13:36:44.496428 raft.go:840: Mandato 0. Entrada comprometida. ult: -1 prevlogindice: -1
+localhost_29262 -> 13:36:44.496440 raft.go:867: (1,1,escribir,clave,valor)
+localhost_29262 -> 13:36:44.496448 raft.go:869: [{1 {1 {escribir clave valor}}}]
+localhost_29262 -> 13:36:44.496849 raft.go:815: Mandato 0. (ult=0) (prevIndice=0)
+localhost_29262 -> 13:36:44.496862 raft.go:840: Mandato 0. Entrada comprometida. ult: 0 prevlogindice: 0
+localhost_29262 -> 13:36:44.496869 raft.go:867: (1,2,a,b,c)
+localhost_29262 -> 13:36:44.496875 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}}]
+localhost_29262 -> 13:36:44.497315 raft.go:815: Mandato 0. (ult=1) (prevIndice=1)
+localhost_29262 -> 13:36:44.497325 raft.go:840: Mandato 0. Entrada comprometida. ult: 1 prevlogindice: 1
+localhost_29262 -> 13:36:44.497332 raft.go:867: (1,3,a,b,c)
+localhost_29262 -> 13:36:44.497338 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}}]
+localhost_29262 -> 13:36:44.497736 raft.go:815: Mandato 0. (ult=2) (prevIndice=2)
+localhost_29262 -> 13:36:44.497745 raft.go:840: Mandato 0. Entrada comprometida. ult: 2 prevlogindice: 2
+localhost_29262 -> 13:36:44.497752 raft.go:867: (1,4,a,b,c)
+localhost_29262 -> 13:36:44.497757 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}} {1 {4 {a b c}}}]
+localhost_29262 -> 13:36:45.425215 raft.go:881: Mandato 0. Mi nuevo lider es 1.
+localhost_29262 -> 13:36:45.425250 raft.go:448: Mandato 0. He actualizado a mandato 1
+localhost_29262 -> 13:36:45.425309 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:46.100504 raft.go:815: Mandato 1. (ult=3) (prevIndice=3)
+localhost_29262 -> 13:36:46.100533 raft.go:840: Mandato 1. Entrada comprometida. ult: 3 prevlogindice: 3
+localhost_29262 -> 13:36:46.100549 raft.go:867: (1,5,escribir,clave,valor)
+localhost_29262 -> 13:36:46.100557 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}} {1 {4 {a b c}}} {1 {5 {escribir clave valor}}}]
+localhost_29262 -> 13:36:46.426045 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:47.426268 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:48.427408 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:49.428333 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:50.102159 raft.go:815: Mandato 1. (ult=4) (prevIndice=4)
+localhost_29262 -> 13:36:50.102187 raft.go:840: Mandato 1. Entrada comprometida. ult: 4 prevlogindice: 4
+localhost_29262 -> 13:36:50.102204 raft.go:867: (1,6,escribir,clave,valor)
+localhost_29262 -> 13:36:50.102213 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}} {1 {4 {a b c}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}}]
+localhost_29262 -> 13:36:50.428756 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:51.429472 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:52.429672 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:53.430701 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:54.105588 raft.go:815: Mandato 1. (ult=5) (prevIndice=5)
+localhost_29262 -> 13:36:54.105615 raft.go:840: Mandato 1. Entrada comprometida. ult: 5 prevlogindice: 5
+localhost_29262 -> 13:36:54.105626 raft.go:867: (1,7,escribir,clave,valor)
+localhost_29262 -> 13:36:54.105634 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}} {1 {4 {a b c}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}} {1 {7 {escribir clave valor}}}]
+localhost_29262 -> 13:36:54.431301 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:55.431265 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:56.432338 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:57.433343 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29262 -> 13:36:58.310555 raft.go:594: nodo detenido

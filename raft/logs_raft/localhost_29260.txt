@@ -1,336 +1,49 @@
-localhost_29260 -> 13:23:29.010180 raft.go:174: logger initialized
-localhost_29260 -> 13:23:29.399436 raft.go:889: Mandato 0. Mi nuevo lider es 2.
-localhost_29260 -> 13:23:29.399484 raft.go:452: Mandato 0. He actualizado a mandato 1
-localhost_29260 -> 13:23:29.399682 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:29.662683 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.662706 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.662721 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.662739 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.663264 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.663291 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.663535 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.663552 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.663592 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.663608 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.663620 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.663664 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.663888 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.663903 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.663918 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.663931 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.664083 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.664100 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.664148 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.664160 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.664206 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.664221 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.664456 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.664477 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.664547 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.664561 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.664614 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.664630 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.664793 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.664807 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.664956 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.664966 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.665013 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.665041 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.665094 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.665122 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.665196 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.665209 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.665257 raft.go:823: Mandato 1. (ult=-1) (prevIndice=0)
-localhost_29260 -> 13:23:29.665265 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=0
-localhost_29260 -> 13:23:29.665307 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.665321 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.665341 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.665353 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.665446 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.665467 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.665491 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.665500 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.665512 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.665519 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.665536 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.665547 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.665574 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.665587 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.665727 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.665741 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.666018 raft.go:823: Mandato 1. (ult=-1) (prevIndice=0)
-localhost_29260 -> 13:23:29.666039 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=0
-localhost_29260 -> 13:23:29.666821 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.666853 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.667008 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.667018 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.667057 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.667064 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.667147 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.667174 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.667222 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.667247 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.667298 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.667320 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.667797 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.667813 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.667925 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.667944 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.667983 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.667991 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.668044 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.668058 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.668152 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.668161 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.668198 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.668204 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.668225 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.668234 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.668383 raft.go:823: Mandato 1. (ult=-1) (prevIndice=0)
-localhost_29260 -> 13:23:29.668390 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=0
-localhost_29260 -> 13:23:29.669084 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.669105 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.669118 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.669133 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.669200 raft.go:823: Mandato 1. (ult=-1) (prevIndice=0)
-localhost_29260 -> 13:23:29.669210 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=0
-localhost_29260 -> 13:23:29.669248 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.669256 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.669277 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.669292 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.669302 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.669311 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.669368 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.669382 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.670618 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.670662 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.670674 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.670692 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.670708 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.670722 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.670739 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.670752 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.670886 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.670921 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.670937 raft.go:823: Mandato 1. (ult=-1) (prevIndice=1)
-localhost_29260 -> 13:23:29.670961 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=1
-localhost_29260 -> 13:23:29.670991 raft.go:823: Mandato 1. (ult=-1) (prevIndice=2)
-localhost_29260 -> 13:23:29.671007 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=2
-localhost_29260 -> 13:23:29.671066 raft.go:823: Mandato 1. (ult=-1) (prevIndice=-1)
-localhost_29260 -> 13:23:29.671081 raft.go:848: Mandato 1. Entrada comprometida. ult: -1 prevlogindice: -1
-localhost_29260 -> 13:23:29.671090 raft.go:875: (1,1,escribir,clave,valor)
-localhost_29260 -> 13:23:29.671098 raft.go:877: [{1 {1 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.671162 raft.go:823: Mandato 1. (ult=0) (prevIndice=1)
-localhost_29260 -> 13:23:29.671176 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
-localhost_29260 -> 13:23:29.671185 raft.go:823: Mandato 1. (ult=0) (prevIndice=2)
-localhost_29260 -> 13:23:29.671193 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
-localhost_29260 -> 13:23:29.671234 raft.go:823: Mandato 1. (ult=0) (prevIndice=1)
-localhost_29260 -> 13:23:29.671243 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
-localhost_29260 -> 13:23:29.672411 raft.go:823: Mandato 1. (ult=0) (prevIndice=1)
-localhost_29260 -> 13:23:29.672432 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
-localhost_29260 -> 13:23:29.672479 raft.go:823: Mandato 1. (ult=0) (prevIndice=1)
-localhost_29260 -> 13:23:29.672487 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=1
-localhost_29260 -> 13:23:29.672512 raft.go:823: Mandato 1. (ult=0) (prevIndice=2)
-localhost_29260 -> 13:23:29.672532 raft.go:828: Mandato 1. Consistencia FALLIDA: Mi log es demasiado corto (ult=0) para prevIndice=2
-localhost_29260 -> 13:23:29.672546 raft.go:823: Mandato 1. (ult=0) (prevIndice=0)
-localhost_29260 -> 13:23:29.672556 raft.go:848: Mandato 1. Entrada comprometida. ult: 0 prevlogindice: 0
-localhost_29260 -> 13:23:29.672567 raft.go:875: (1,2,escribir,clave,valor)
-localhost_29260 -> 13:23:29.672577 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.672613 raft.go:823: Mandato 1. (ult=1) (prevIndice=-1)
-localhost_29260 -> 13:23:29.672628 raft.go:848: Mandato 1. Entrada comprometida. ult: 1 prevlogindice: -1
-localhost_29260 -> 13:23:29.672638 raft.go:875: (1,1,escribir,clave,valor)
-localhost_29260 -> 13:23:29.672645 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.672659 raft.go:823: Mandato 1. (ult=2) (prevIndice=1)
-localhost_29260 -> 13:23:29.672678 raft.go:848: Mandato 1. Entrada comprometida. ult: 2 prevlogindice: 1
-localhost_29260 -> 13:23:29.672687 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.672694 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.672750 raft.go:823: Mandato 1. (ult=3) (prevIndice=2)
-localhost_29260 -> 13:23:29.672757 raft.go:848: Mandato 1. Entrada comprometida. ult: 3 prevlogindice: 2
-localhost_29260 -> 13:23:29.672768 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.672783 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.672847 raft.go:823: Mandato 1. (ult=4) (prevIndice=2)
-localhost_29260 -> 13:23:29.672855 raft.go:848: Mandato 1. Entrada comprometida. ult: 4 prevlogindice: 2
-localhost_29260 -> 13:23:29.672862 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.672869 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.672926 raft.go:823: Mandato 1. (ult=5) (prevIndice=1)
-localhost_29260 -> 13:23:29.672932 raft.go:848: Mandato 1. Entrada comprometida. ult: 5 prevlogindice: 1
-localhost_29260 -> 13:23:29.672939 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.672944 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.672982 raft.go:823: Mandato 1. (ult=6) (prevIndice=1)
-localhost_29260 -> 13:23:29.672988 raft.go:848: Mandato 1. Entrada comprometida. ult: 6 prevlogindice: 1
-localhost_29260 -> 13:23:29.672994 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.672999 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673045 raft.go:823: Mandato 1. (ult=7) (prevIndice=2)
-localhost_29260 -> 13:23:29.673057 raft.go:848: Mandato 1. Entrada comprometida. ult: 7 prevlogindice: 2
-localhost_29260 -> 13:23:29.673066 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673072 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673114 raft.go:823: Mandato 1. (ult=8) (prevIndice=1)
-localhost_29260 -> 13:23:29.673132 raft.go:848: Mandato 1. Entrada comprometida. ult: 8 prevlogindice: 1
-localhost_29260 -> 13:23:29.673142 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673149 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673205 raft.go:823: Mandato 1. (ult=9) (prevIndice=1)
-localhost_29260 -> 13:23:29.673222 raft.go:848: Mandato 1. Entrada comprometida. ult: 9 prevlogindice: 1
-localhost_29260 -> 13:23:29.673233 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673240 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673318 raft.go:823: Mandato 1. (ult=10) (prevIndice=1)
-localhost_29260 -> 13:23:29.673325 raft.go:848: Mandato 1. Entrada comprometida. ult: 10 prevlogindice: 1
-localhost_29260 -> 13:23:29.673330 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673335 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673379 raft.go:823: Mandato 1. (ult=11) (prevIndice=2)
-localhost_29260 -> 13:23:29.673385 raft.go:848: Mandato 1. Entrada comprometida. ult: 11 prevlogindice: 2
-localhost_29260 -> 13:23:29.673390 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673396 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673445 raft.go:823: Mandato 1. (ult=12) (prevIndice=2)
-localhost_29260 -> 13:23:29.673465 raft.go:848: Mandato 1. Entrada comprometida. ult: 12 prevlogindice: 2
-localhost_29260 -> 13:23:29.673473 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673481 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673535 raft.go:823: Mandato 1. (ult=13) (prevIndice=1)
-localhost_29260 -> 13:23:29.673549 raft.go:848: Mandato 1. Entrada comprometida. ult: 13 prevlogindice: 1
-localhost_29260 -> 13:23:29.673557 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673562 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673624 raft.go:823: Mandato 1. (ult=14) (prevIndice=1)
-localhost_29260 -> 13:23:29.673638 raft.go:848: Mandato 1. Entrada comprometida. ult: 14 prevlogindice: 1
-localhost_29260 -> 13:23:29.673646 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673653 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673742 raft.go:823: Mandato 1. (ult=15) (prevIndice=2)
-localhost_29260 -> 13:23:29.673750 raft.go:848: Mandato 1. Entrada comprometida. ult: 15 prevlogindice: 2
-localhost_29260 -> 13:23:29.673757 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673763 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.673821 raft.go:823: Mandato 1. (ult=16) (prevIndice=2)
-localhost_29260 -> 13:23:29.673834 raft.go:848: Mandato 1. Entrada comprometida. ult: 16 prevlogindice: 2
-localhost_29260 -> 13:23:29.673842 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.673848 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674076 raft.go:823: Mandato 1. (ult=17) (prevIndice=1)
-localhost_29260 -> 13:23:29.674089 raft.go:848: Mandato 1. Entrada comprometida. ult: 17 prevlogindice: 1
-localhost_29260 -> 13:23:29.674097 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674104 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674190 raft.go:823: Mandato 1. (ult=18) (prevIndice=2)
-localhost_29260 -> 13:23:29.674198 raft.go:848: Mandato 1. Entrada comprometida. ult: 18 prevlogindice: 2
-localhost_29260 -> 13:23:29.674209 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674215 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674283 raft.go:823: Mandato 1. (ult=19) (prevIndice=1)
-localhost_29260 -> 13:23:29.674290 raft.go:848: Mandato 1. Entrada comprometida. ult: 19 prevlogindice: 1
-localhost_29260 -> 13:23:29.674297 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674302 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674367 raft.go:823: Mandato 1. (ult=20) (prevIndice=2)
-localhost_29260 -> 13:23:29.674374 raft.go:848: Mandato 1. Entrada comprometida. ult: 20 prevlogindice: 2
-localhost_29260 -> 13:23:29.674380 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674386 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674476 raft.go:823: Mandato 1. (ult=21) (prevIndice=1)
-localhost_29260 -> 13:23:29.674484 raft.go:848: Mandato 1. Entrada comprometida. ult: 21 prevlogindice: 1
-localhost_29260 -> 13:23:29.674491 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674497 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674559 raft.go:823: Mandato 1. (ult=22) (prevIndice=2)
-localhost_29260 -> 13:23:29.674569 raft.go:848: Mandato 1. Entrada comprometida. ult: 22 prevlogindice: 2
-localhost_29260 -> 13:23:29.674577 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674584 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674709 raft.go:823: Mandato 1. (ult=23) (prevIndice=1)
-localhost_29260 -> 13:23:29.674719 raft.go:848: Mandato 1. Entrada comprometida. ult: 23 prevlogindice: 1
-localhost_29260 -> 13:23:29.674727 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674735 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674781 raft.go:823: Mandato 1. (ult=24) (prevIndice=1)
-localhost_29260 -> 13:23:29.674794 raft.go:848: Mandato 1. Entrada comprometida. ult: 24 prevlogindice: 1
-localhost_29260 -> 13:23:29.674801 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674808 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674867 raft.go:823: Mandato 1. (ult=25) (prevIndice=2)
-localhost_29260 -> 13:23:29.674874 raft.go:848: Mandato 1. Entrada comprometida. ult: 25 prevlogindice: 2
-localhost_29260 -> 13:23:29.674881 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.674887 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.674933 raft.go:823: Mandato 1. (ult=26) (prevIndice=1)
-localhost_29260 -> 13:23:29.674940 raft.go:848: Mandato 1. Entrada comprometida. ult: 26 prevlogindice: 1
-localhost_29260 -> 13:23:29.674946 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.675115 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.675536 raft.go:823: Mandato 1. (ult=27) (prevIndice=1)
-localhost_29260 -> 13:23:29.675547 raft.go:848: Mandato 1. Entrada comprometida. ult: 27 prevlogindice: 1
-localhost_29260 -> 13:23:29.675906 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.675916 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.675978 raft.go:823: Mandato 1. (ult=28) (prevIndice=2)
-localhost_29260 -> 13:23:29.675986 raft.go:848: Mandato 1. Entrada comprometida. ult: 28 prevlogindice: 2
-localhost_29260 -> 13:23:29.675992 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.675999 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676062 raft.go:823: Mandato 1. (ult=29) (prevIndice=2)
-localhost_29260 -> 13:23:29.676068 raft.go:848: Mandato 1. Entrada comprometida. ult: 29 prevlogindice: 2
-localhost_29260 -> 13:23:29.676075 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676080 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676145 raft.go:823: Mandato 1. (ult=30) (prevIndice=2)
-localhost_29260 -> 13:23:29.676151 raft.go:848: Mandato 1. Entrada comprometida. ult: 30 prevlogindice: 2
-localhost_29260 -> 13:23:29.676157 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676162 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676218 raft.go:823: Mandato 1. (ult=31) (prevIndice=2)
-localhost_29260 -> 13:23:29.676224 raft.go:848: Mandato 1. Entrada comprometida. ult: 31 prevlogindice: 2
-localhost_29260 -> 13:23:29.676230 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676236 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676289 raft.go:823: Mandato 1. (ult=32) (prevIndice=1)
-localhost_29260 -> 13:23:29.676294 raft.go:848: Mandato 1. Entrada comprometida. ult: 32 prevlogindice: 1
-localhost_29260 -> 13:23:29.676300 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676306 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676365 raft.go:823: Mandato 1. (ult=33) (prevIndice=1)
-localhost_29260 -> 13:23:29.676371 raft.go:848: Mandato 1. Entrada comprometida. ult: 33 prevlogindice: 1
-localhost_29260 -> 13:23:29.676376 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676381 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676436 raft.go:823: Mandato 1. (ult=34) (prevIndice=1)
-localhost_29260 -> 13:23:29.676441 raft.go:848: Mandato 1. Entrada comprometida. ult: 34 prevlogindice: 1
-localhost_29260 -> 13:23:29.676448 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676453 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676511 raft.go:823: Mandato 1. (ult=35) (prevIndice=0)
-localhost_29260 -> 13:23:29.676517 raft.go:848: Mandato 1. Entrada comprometida. ult: 35 prevlogindice: 0
-localhost_29260 -> 13:23:29.676523 raft.go:875: (1,2,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676529 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676582 raft.go:823: Mandato 1. (ult=36) (prevIndice=2)
-localhost_29260 -> 13:23:29.676596 raft.go:848: Mandato 1. Entrada comprometida. ult: 36 prevlogindice: 2
-localhost_29260 -> 13:23:29.676602 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676607 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676662 raft.go:823: Mandato 1. (ult=37) (prevIndice=2)
-localhost_29260 -> 13:23:29.676668 raft.go:848: Mandato 1. Entrada comprometida. ult: 37 prevlogindice: 2
-localhost_29260 -> 13:23:29.676674 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676680 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676743 raft.go:823: Mandato 1. (ult=38) (prevIndice=2)
-localhost_29260 -> 13:23:29.676749 raft.go:848: Mandato 1. Entrada comprometida. ult: 38 prevlogindice: 2
-localhost_29260 -> 13:23:29.676755 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676760 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676827 raft.go:823: Mandato 1. (ult=39) (prevIndice=1)
-localhost_29260 -> 13:23:29.676832 raft.go:848: Mandato 1. Entrada comprometida. ult: 39 prevlogindice: 1
-localhost_29260 -> 13:23:29.676838 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676844 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676917 raft.go:823: Mandato 1. (ult=40) (prevIndice=2)
-localhost_29260 -> 13:23:29.676923 raft.go:848: Mandato 1. Entrada comprometida. ult: 40 prevlogindice: 2
-localhost_29260 -> 13:23:29.676929 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.676934 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.676994 raft.go:823: Mandato 1. (ult=41) (prevIndice=2)
-localhost_29260 -> 13:23:29.677000 raft.go:848: Mandato 1. Entrada comprometida. ult: 41 prevlogindice: 2
-localhost_29260 -> 13:23:29.677006 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.677011 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.677073 raft.go:823: Mandato 1. (ult=42) (prevIndice=2)
-localhost_29260 -> 13:23:29.677079 raft.go:848: Mandato 1. Entrada comprometida. ult: 42 prevlogindice: 2
-localhost_29260 -> 13:23:29.677084 raft.go:875: (1,4,escribir,clave,valor)
-localhost_29260 -> 13:23:29.677090 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29260 -> 13:23:29.677160 raft.go:823: Mandato 1. (ult=43) (prevIndice=1)
-localhost_29260 -> 13:23:29.677166 raft.go:848: Mandato 1. Entrada comprometida. ult: 43 prevlogindice: 1
-localhost_29260 -> 13:23:29.677172 raft.go:875: (1,3,escribir,clave,valor)
-localhost_29260 -> 13:23:29.677177 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29260 -> 13:23:30.399453 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:30.663923 raft.go:823: Mandato 1. (ult=44) (prevIndice=3)
-localhost_29260 -> 13:23:30.663983 raft.go:848: Mandato 1. Entrada comprometida. ult: 44 prevlogindice: 3
-localhost_29260 -> 13:23:30.663993 raft.go:875: (1,5,escribir,clave,valor)
-localhost_29260 -> 13:23:30.664001 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {5 {escribir clave valor}}}]
-localhost_29260 -> 13:23:31.400392 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:32.401281 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:33.402197 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:34.402426 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:34.668731 raft.go:823: Mandato 1. (ult=45) (prevIndice=4)
-localhost_29260 -> 13:23:34.668769 raft.go:848: Mandato 1. Entrada comprometida. ult: 45 prevlogindice: 4
-localhost_29260 -> 13:23:34.668787 raft.go:875: (1,6,escribir,clave,valor)
-localhost_29260 -> 13:23:34.668797 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}}]
-localhost_29260 -> 13:23:35.402977 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:36.403848 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:37.404790 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:38.405787 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:38.673627 raft.go:823: Mandato 1. (ult=46) (prevIndice=5)
-localhost_29260 -> 13:23:38.673663 raft.go:848: Mandato 1. Entrada comprometida. ult: 46 prevlogindice: 5
-localhost_29260 -> 13:23:38.673673 raft.go:875: (1,7,escribir,clave,valor)
-localhost_29260 -> 13:23:38.673682 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {1 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}} {1 {7 {escribir clave valor}}}]
-localhost_29260 -> 13:23:39.405867 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:40.406481 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:41.407312 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:42.408295 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
-localhost_29260 -> 13:23:42.878141 raft.go:600: nodo detenido
+localhost_29260 -> 13:36:42.426502 raft.go:174: logger initialized
+localhost_29260 -> 13:36:42.494251 raft.go:815: Mandato 0. (ult=-1) (prevIndice=0)
+localhost_29260 -> 13:36:42.494265 raft.go:820: Mandato 0. Consistencia FALLIDA: Mi log es demasiado corto (ult=-1) para prevIndice=0
+localhost_29260 -> 13:36:42.494649 raft.go:815: Mandato 0. (ult=-1) (prevIndice=-1)
+localhost_29260 -> 13:36:42.494659 raft.go:840: Mandato 0. Entrada comprometida. ult: -1 prevlogindice: -1
+localhost_29260 -> 13:36:42.494665 raft.go:867: (1,1,escribir,clave,valor)
+localhost_29260 -> 13:36:42.494670 raft.go:869: [{1 {1 {escribir clave valor}}}]
+localhost_29260 -> 13:36:42.495191 raft.go:815: Mandato 0. (ult=0) (prevIndice=0)
+localhost_29260 -> 13:36:42.495206 raft.go:840: Mandato 0. Entrada comprometida. ult: 0 prevlogindice: 0
+localhost_29260 -> 13:36:42.495213 raft.go:867: (1,2,a,b,c)
+localhost_29260 -> 13:36:42.495219 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}}]
+localhost_29260 -> 13:36:42.495672 raft.go:815: Mandato 0. (ult=1) (prevIndice=1)
+localhost_29260 -> 13:36:42.495682 raft.go:840: Mandato 0. Entrada comprometida. ult: 1 prevlogindice: 1
+localhost_29260 -> 13:36:42.495689 raft.go:867: (1,3,a,b,c)
+localhost_29260 -> 13:36:42.495694 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}}]
+localhost_29260 -> 13:36:42.496113 raft.go:815: Mandato 0. (ult=2) (prevIndice=2)
+localhost_29260 -> 13:36:42.496123 raft.go:840: Mandato 0. Entrada comprometida. ult: 2 prevlogindice: 2
+localhost_29260 -> 13:36:42.496128 raft.go:867: (1,4,a,b,c)
+localhost_29260 -> 13:36:42.496132 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}} {1 {4 {a b c}}}]
+localhost_29260 -> 13:36:43.424027 raft.go:881: Mandato 0. Mi nuevo lider es 1.
+localhost_29260 -> 13:36:43.424060 raft.go:448: Mandato 0. He actualizado a mandato 1
+localhost_29260 -> 13:36:43.424127 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:44.424843 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:45.425304 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:46.100425 raft.go:815: Mandato 1. (ult=3) (prevIndice=3)
+localhost_29260 -> 13:36:46.100457 raft.go:840: Mandato 1. Entrada comprometida. ult: 3 prevlogindice: 3
+localhost_29260 -> 13:36:46.100474 raft.go:867: (1,5,escribir,clave,valor)
+localhost_29260 -> 13:36:46.100482 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}} {1 {4 {a b c}}} {1 {5 {escribir clave valor}}}]
+localhost_29260 -> 13:36:46.426120 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:47.426294 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:48.427325 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:49.428361 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:50.102147 raft.go:815: Mandato 1. (ult=4) (prevIndice=4)
+localhost_29260 -> 13:36:50.102184 raft.go:840: Mandato 1. Entrada comprometida. ult: 4 prevlogindice: 4
+localhost_29260 -> 13:36:50.102195 raft.go:867: (1,6,escribir,clave,valor)
+localhost_29260 -> 13:36:50.102203 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}} {1 {4 {a b c}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}}]
+localhost_29260 -> 13:36:50.428763 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:51.429456 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:52.429730 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:53.430734 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:54.105564 raft.go:815: Mandato 1. (ult=5) (prevIndice=5)
+localhost_29260 -> 13:36:54.105596 raft.go:840: Mandato 1. Entrada comprometida. ult: 5 prevlogindice: 5
+localhost_29260 -> 13:36:54.105606 raft.go:867: (1,7,escribir,clave,valor)
+localhost_29260 -> 13:36:54.105614 raft.go:869: [{1 {1 {escribir clave valor}}} {1 {2 {a b c}}} {1 {3 {a b c}}} {1 {4 {a b c}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}} {1 {7 {escribir clave valor}}}]
+localhost_29260 -> 13:36:54.431230 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:55.431289 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:56.432346 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:57.433339 raft.go:295: Mandato 1. He recibido latido, mi lider es 1
+localhost_29260 -> 13:36:58.309497 raft.go:594: nodo detenido

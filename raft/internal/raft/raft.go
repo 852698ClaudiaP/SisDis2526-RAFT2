@@ -179,7 +179,12 @@ func NuevoNodo(nodos []rpctimeout.HostPort, yo int,
 	// Añadir codigo de inicialización
 	go seleccionarEstado(nr)
 	go aplicarEntradas(nr, canalAplicarOperacion)
-	go enviarEntradas(nr)
+
+	for nodo := 0; nodo < len(nr.Nodos); nodo++ {
+		if nodo != nr.Yo {
+			go enviarEntradas(nr, nodo)
+		}
+	}
 
 	return nr
 }
@@ -199,49 +204,40 @@ func aplicarEntradas(nr *NodoRaft, canalAplicarOperacion chan AplicaOperacion) {
 }
 
 // Envia entradas nuevas al resto de nodo si es lider
-func enviarEntradas(nr *NodoRaft) {
+func enviarEntradas(nr *NodoRaft, nodo int) {
 	for {
 		if nr.Estado == lider {
 			// Mandar entrada a nodos
 			// HERE
-			for nodo := 0; nodo < len(nr.Nodos); nodo++ {
-				if nodo != nr.Yo {
 
-					if nr.getUltimoIndice() >= nr.NextIndice[nodo] {
+			if nr.getUltimoIndice() >= nr.NextIndice[nodo] {
 
-						nr.Mux.Lock()
-						var ultind int
-						var ultmand int
-						if nr.NextIndice[nodo] > 0 {
-							ultind = nr.NextIndice[nodo] - 1
-							ultmand = nr.Log[nr.NextIndice[nodo]-1].Mandato
-						} else {
-							ultind = -1
-							ultmand = -1
-						}
-						entrada := nr.Log[nr.NextIndice[nodo]]
-						//nr.Logger.Println(nr.NextIndice)
-						nr.NextIndice[nodo]++
-						commitindex := nr.CommitIndice
-						nr.Mux.Unlock()
-
-						//nr.Logger.Printf("Enviando entrada a nodo %d con ultind %d\n", nodo, ultind)
-						//nr.Logger.Println(nr.Log)
-						//nr.Logger.Println(entradas)
-
-						var resultados Results
-						go nr.enviarOperacion(nodo,
-							&ArgAppendEntries{
-								nr.MandatoActual,
-								nr.Yo,
-								ultind,
-								ultmand,
-								entrada,
-								commitindex,
-							},
-							&resultados)
-					}
+				nr.Mux.Lock()
+				var ultind int
+				var ultmand int
+				if nr.NextIndice[nodo] > 0 {
+					ultind = nr.NextIndice[nodo] - 1
+					ultmand = nr.Log[nr.NextIndice[nodo]-1].Mandato
+				} else {
+					ultind = -1
+					ultmand = -1
 				}
+				entrada := nr.Log[nr.NextIndice[nodo]]
+				nr.NextIndice[nodo]++
+				commitindex := nr.CommitIndice
+				nr.Mux.Unlock()
+
+				var resultados Results
+				nr.enviarOperacion(nodo,
+					&ArgAppendEntries{
+						nr.MandatoActual,
+						nr.Yo,
+						ultind,
+						ultmand,
+						entrada,
+						commitindex,
+					},
+					&resultados)
 			}
 		}
 	}
@@ -525,8 +521,8 @@ func (nr *NodoRaft) someterOperacion(operacion TipoOperacion) (int, int,
 		<-done
 
 		nr.Logger.Printf(
-			"Mandato %d. Entrada comprometida\n",
-			nr.MandatoActual,
+			"Mandato %d. Entrada %d comprometida\n",
+			nr.MandatoActual, indice,
 		)
 	}
 
@@ -546,10 +542,10 @@ func (nr *NodoRaft) esperarComprometido(indice int, done chan bool) {
 		}
 		nr.Mux.Unlock()
 		if nodosComprometidos >= ((len(nr.Nodos) / 2) + 1) {
-			nr.Logger.Printf(
+			/*nr.Logger.Printf(
 				"Comprometidos %d\n",
 				nodosComprometidos,
-			)
+			)*/
 			done <- true
 			break
 		}
@@ -573,7 +569,6 @@ func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 	} else if !resultados.Exito { // no ha conseguido consistencia
 		nr.Mux.Lock()
 		nr.Logger.Printf("Error al actualizar log de %d con PrevLogIndice %d", idNodo, args.PrevLogIndice)
-		nr.Logger.Println(args.Entrada)
 		nr.NextIndice[idNodo] = nr.NextIndice[idNodo] - 2
 		if nr.NextIndice[idNodo] < 0 {
 			nr.NextIndice[idNodo] = 0
@@ -583,7 +578,6 @@ func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 	} else {
 		nr.Mux.Lock()
 		nr.Logger.Printf("Actualizado log de %d con PrevLogIndice %d", idNodo, args.PrevLogIndice)
-		nr.Logger.Println(args.Entrada)
 		nr.Mux.Unlock()
 		nr.LastIndice[idNodo] = nr.NextIndice[idNodo]
 		return true
@@ -789,8 +783,6 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 	//sino, se esta replicando una nueva entrada
 	//en el registro de operaciones
 
-	//nr.Logger.Println(args.Entradas)
-
 	if args.Entrada == (Entrada{}) {
 		//fmt.Printf("Mandato %d. Latido recibido\n", nr.MandatoActual)
 		if (args.MandLider >= nr.MandatoActual) && (args.IdLider != nr.IdLider) {
@@ -874,7 +866,6 @@ func (nr *NodoRaft) addEntrada(entrada Entrada) {
 	nr.Log = append(nr.Log, entrada)
 	nr.Logger.Printf("(%d,%d,%s,%s,%s)", entrada.Mandato, entrada.Operacion.Indice, entrada.Operacion.Operacion.Operacion, entrada.Operacion.Operacion.Clave, entrada.Operacion.Operacion.Valor)
 	nr.LastIndice[nr.Yo] = entrada.Operacion.Indice
-	nr.Logger.Println(nr.Log)
 }
 
 func (nr *NodoRaft) addEntradas(entradas []Entrada) {
