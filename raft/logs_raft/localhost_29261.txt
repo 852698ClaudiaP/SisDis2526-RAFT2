@@ -1,57 +1,64 @@
-localhost_29261 -> 12:26:44.795211 raft.go:174: logger initialized
-localhost_29261 -> 12:26:51.533178 raft.go:451: Mandato 0. He actualizado a mandato 1
-localhost_29261 -> 12:26:51.533210 raft.go:702: Mandato 1. Voto dado a 2 (Log OK)
-localhost_29261 -> 12:26:51.533897 raft.go:877: Mandato 1. Mi nuevo lider es 2.
-localhost_29261 -> 12:26:51.533958 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:51.651068 raft.go:835: Mandato 1. Entrada comprometida. ult: -1 prevlogindice: -1
-localhost_29261 -> 12:26:51.651096 raft.go:863: (1,1,escribir,clave,valor)
-localhost_29261 -> 12:26:51.651105 raft.go:865: [{1 {1 {escribir clave valor}}}]
-localhost_29261 -> 12:26:52.534165 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:53.534252 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:54.535335 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:55.536060 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:55.655501 raft.go:835: Mandato 1. Entrada comprometida. ult: 0 prevlogindice: 0
-localhost_29261 -> 12:26:55.655542 raft.go:863: (2,1,escribir,clave,valor)
-localhost_29261 -> 12:26:55.655552 raft.go:865: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}}]
-localhost_29261 -> 12:26:56.536393 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:57.537019 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:58.537888 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:59.538693 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:26:59.660140 raft.go:835: Mandato 1. Entrada comprometida. ult: 1 prevlogindice: 1
-localhost_29261 -> 12:26:59.660170 raft.go:863: (3,1,escribir,clave,valor)
-localhost_29261 -> 12:26:59.660179 raft.go:865: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
-localhost_29261 -> 12:27:00.539116 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:01.539387 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:02.539750 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:03.540037 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:03.661848 raft.go:835: Mandato 1. Entrada comprometida. ult: 2 prevlogindice: 2
-localhost_29261 -> 12:27:03.661870 raft.go:863: (4,1,escribir,clave,valor)
-localhost_29261 -> 12:27:03.661879 raft.go:865: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
-localhost_29261 -> 12:27:04.540152 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:05.540749 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:06.541380 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:07.541933 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:08.542454 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:09.543372 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:09.666909 raft.go:835: Mandato 1. Entrada comprometida. ult: 3 prevlogindice: 3
-localhost_29261 -> 12:27:09.666953 raft.go:863: (5,1,escribir,clave,valor)
-localhost_29261 -> 12:27:09.666962 raft.go:865: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}}]
-localhost_29261 -> 12:27:10.544310 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:11.545329 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:12.546346 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:13.547354 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:13.670622 raft.go:835: Mandato 1. Entrada comprometida. ult: 4 prevlogindice: 4
-localhost_29261 -> 12:27:13.670659 raft.go:863: (6,1,escribir,clave,valor)
-localhost_29261 -> 12:27:13.670667 raft.go:865: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}}]
-localhost_29261 -> 12:27:14.548379 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:15.549318 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:16.550377 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:17.551326 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:17.674630 raft.go:835: Mandato 1. Entrada comprometida. ult: 5 prevlogindice: 5
-localhost_29261 -> 12:27:17.674655 raft.go:863: (7,1,escribir,clave,valor)
-localhost_29261 -> 12:27:17.674663 raft.go:865: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}} {1 {7 {escribir clave valor}}}]
-localhost_29261 -> 12:27:18.551563 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:19.552138 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:20.552235 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:21.552931 raft.go:298: Mandato 1. He recibido latido, mi lider es 2
-localhost_29261 -> 12:27:21.879093 raft.go:595: nodo detenido
+localhost_29261 -> 13:23:06.012696 raft.go:174: logger initialized
+localhost_29261 -> 13:23:12.390860 raft.go:452: Mandato 0. He actualizado a mandato 1
+localhost_29261 -> 13:23:12.390913 raft.go:707: Mandato 1. Voto dado a 2 (Log OK)
+localhost_29261 -> 13:23:12.391660 raft.go:889: Mandato 1. Mi nuevo lider es 2.
+localhost_29261 -> 13:23:12.391765 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:12.643177 raft.go:823: Mandato 1. (ult=-1) (prevIndice=-1)
+localhost_29261 -> 13:23:12.643236 raft.go:848: Mandato 1. Entrada comprometida. ult: -1 prevlogindice: -1
+localhost_29261 -> 13:23:12.643258 raft.go:875: (1,1,escribir,clave,valor)
+localhost_29261 -> 13:23:12.643272 raft.go:877: [{1 {1 {escribir clave valor}}}]
+localhost_29261 -> 13:23:13.392880 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:14.392799 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:15.392781 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:16.393732 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:16.649218 raft.go:823: Mandato 1. (ult=0) (prevIndice=0)
+localhost_29261 -> 13:23:16.649253 raft.go:848: Mandato 1. Entrada comprometida. ult: 0 prevlogindice: 0
+localhost_29261 -> 13:23:16.649263 raft.go:875: (1,2,escribir,clave,valor)
+localhost_29261 -> 13:23:16.649272 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}}]
+localhost_29261 -> 13:23:17.394101 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:18.395067 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:19.395928 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:20.396429 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:20.653874 raft.go:823: Mandato 1. (ult=1) (prevIndice=1)
+localhost_29261 -> 13:23:20.653902 raft.go:848: Mandato 1. Entrada comprometida. ult: 1 prevlogindice: 1
+localhost_29261 -> 13:23:20.653923 raft.go:875: (1,3,escribir,clave,valor)
+localhost_29261 -> 13:23:20.653932 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}}]
+localhost_29261 -> 13:23:21.397015 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:22.397440 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:23.397746 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:24.398098 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:24.657974 raft.go:823: Mandato 1. (ult=2) (prevIndice=2)
+localhost_29261 -> 13:23:24.658006 raft.go:848: Mandato 1. Entrada comprometida. ult: 2 prevlogindice: 2
+localhost_29261 -> 13:23:24.658017 raft.go:875: (1,4,escribir,clave,valor)
+localhost_29261 -> 13:23:24.658027 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}}]
+localhost_29261 -> 13:23:25.398102 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:26.398310 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:27.398624 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:28.399035 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:29.399375 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:30.399519 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:30.663927 raft.go:823: Mandato 1. (ult=3) (prevIndice=3)
+localhost_29261 -> 13:23:30.663979 raft.go:848: Mandato 1. Entrada comprometida. ult: 3 prevlogindice: 3
+localhost_29261 -> 13:23:30.664003 raft.go:875: (1,5,escribir,clave,valor)
+localhost_29261 -> 13:23:30.664012 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}}]
+localhost_29261 -> 13:23:31.400414 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:32.401329 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:33.402195 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:34.402449 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:34.668812 raft.go:823: Mandato 1. (ult=4) (prevIndice=4)
+localhost_29261 -> 13:23:34.668843 raft.go:848: Mandato 1. Entrada comprometida. ult: 4 prevlogindice: 4
+localhost_29261 -> 13:23:34.668855 raft.go:875: (1,6,escribir,clave,valor)
+localhost_29261 -> 13:23:34.668865 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}}]
+localhost_29261 -> 13:23:35.403014 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:36.403889 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:37.404834 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:38.405784 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:38.673623 raft.go:823: Mandato 1. (ult=5) (prevIndice=5)
+localhost_29261 -> 13:23:38.673658 raft.go:848: Mandato 1. Entrada comprometida. ult: 5 prevlogindice: 5
+localhost_29261 -> 13:23:38.673669 raft.go:875: (1,7,escribir,clave,valor)
+localhost_29261 -> 13:23:38.673679 raft.go:877: [{1 {1 {escribir clave valor}}} {1 {2 {escribir clave valor}}} {1 {3 {escribir clave valor}}} {1 {4 {escribir clave valor}}} {1 {5 {escribir clave valor}}} {1 {6 {escribir clave valor}}} {1 {7 {escribir clave valor}}}]
+localhost_29261 -> 13:23:39.405862 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:40.406430 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:41.407283 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:42.408308 raft.go:299: Mandato 1. He recibido latido, mi lider es 2
+localhost_29261 -> 13:23:42.878819 raft.go:600: nodo detenido

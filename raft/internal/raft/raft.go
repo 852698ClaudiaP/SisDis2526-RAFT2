@@ -209,6 +209,7 @@ func enviarEntradas(nr *NodoRaft) {
 
 					if nr.getUltimoIndice() >= nr.NextIndice[nodo] {
 
+						nr.Mux.Lock()
 						var ultind int
 						var ultmand int
 						if nr.NextIndice[nodo] > 0 {
@@ -220,8 +221,8 @@ func enviarEntradas(nr *NodoRaft) {
 						}
 						entrada := nr.Log[nr.NextIndice[nodo]]
 						//nr.Logger.Println(nr.NextIndice)
-						nr.Mux.Lock()
 						nr.NextIndice[nodo]++
+						commitindex := nr.CommitIndice
 						nr.Mux.Unlock()
 
 						//nr.Logger.Printf("Enviando entrada a nodo %d con ultind %d\n", nodo, ultind)
@@ -236,7 +237,7 @@ func enviarEntradas(nr *NodoRaft) {
 								ultind,
 								ultmand,
 								entrada,
-								nr.CommitIndice,
+								commitindex,
 							},
 							&resultados)
 					}
@@ -570,8 +571,9 @@ func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 		nr.Mux.Unlock()
 		return false
 	} else if !resultados.Exito { // no ha conseguido consistencia
-		nr.Logger.Printf("Error al actualizar log de %d", idNodo)
 		nr.Mux.Lock()
+		nr.Logger.Printf("Error al actualizar log de %d con PrevLogIndice %d", idNodo, args.PrevLogIndice)
+		nr.Logger.Println(args.Entrada)
 		nr.NextIndice[idNodo] = nr.NextIndice[idNodo] - 2
 		if nr.NextIndice[idNodo] < 0 {
 			nr.NextIndice[idNodo] = 0
@@ -579,7 +581,10 @@ func (nr *NodoRaft) enviarOperacion(idNodo int, args *ArgAppendEntries,
 		nr.Mux.Unlock()
 		return false
 	} else {
-		nr.Logger.Printf("Actualizado log de %d", idNodo)
+		nr.Mux.Lock()
+		nr.Logger.Printf("Actualizado log de %d con PrevLogIndice %d", idNodo, args.PrevLogIndice)
+		nr.Logger.Println(args.Entrada)
+		nr.Mux.Unlock()
 		nr.LastIndice[idNodo] = nr.NextIndice[idNodo]
 		return true
 	}
@@ -800,10 +805,14 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 		results.MandatoActual = nr.MandatoActual
 	} else {
 
+		nr.Mux.Lock()
+		defer nr.Mux.Unlock()
+
+		results.MandatoActual = nr.MandatoActual
+
 		//1. Reply false if term < currentTerm (§5.1)
 		if args.MandLider < nr.MandatoActual {
 			results.Exito = false
-			results.MandatoActual = nr.MandatoActual
 			nr.Logger.Printf("Mandato %d. AppendEntries RECHAZADO: Líder %d tiene mandato inferior (%d)",
 				nr.MandatoActual, args.IdLider, args.MandLider)
 			return nil
@@ -811,13 +820,17 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 
 		// 2. Reply false if log doesn’t contain an entry at prevLogIndex
 		// whose term matches prevLogTerm (§5.3)
-		if args.PrevLogIndice > 0 {
-			if args.PrevLogIndice > nr.getUltimoIndice() {
-				results.Exito = false
-				nr.Logger.Printf("Mandato %d. Consistencia FALLIDA: Mi log es demasiado corto (ult=%d) para prevIndice=%d\n",
-					nr.MandatoActual, nr.getUltimoIndice(), args.PrevLogIndice)
-				return nil
-			}
+		nr.Logger.Printf("Mandato %d. (ult=%d) (prevIndice=%d)\n",
+			nr.MandatoActual, nr.getUltimoIndice(), args.PrevLogIndice)
+
+		if args.PrevLogIndice > nr.getUltimoIndice() {
+			results.Exito = false
+			nr.Logger.Printf("Mandato %d. Consistencia FALLIDA: Mi log es demasiado corto (ult=%d) para prevIndice=%d\n",
+				nr.MandatoActual, nr.getUltimoIndice(), args.PrevLogIndice)
+			return nil
+		}
+
+		if args.PrevLogIndice >= 0 { // si -1, es entrada nueva
 
 			// 3. If an existing entry conflicts with a new one (same index but different terms), delete the existing entry and all that follow it (§5.3)
 			if nr.Log[args.PrevLogIndice].Mandato != args.PrevLogMandato {
@@ -838,7 +851,6 @@ func (nr *NodoRaft) AppendEntries(args *ArgAppendEntries,
 		)
 		nr.addEntrada(args.Entrada)
 		results.Exito = true
-		results.MandatoActual = nr.MandatoActual
 
 		// 5. If leaderCommit > commitIndex, set commitIndex =
 		// min(leaderCommit, index of last new entry)
@@ -860,7 +872,7 @@ func min(a, b int) int {
 
 func (nr *NodoRaft) addEntrada(entrada Entrada) {
 	nr.Log = append(nr.Log, entrada)
-	nr.Logger.Printf("(%d,%d,%s,%s,%s)", entrada.Operacion.Indice, entrada.Mandato, entrada.Operacion.Operacion.Operacion, entrada.Operacion.Operacion.Clave, entrada.Operacion.Operacion.Valor)
+	nr.Logger.Printf("(%d,%d,%s,%s,%s)", entrada.Mandato, entrada.Operacion.Indice, entrada.Operacion.Operacion.Operacion, entrada.Operacion.Operacion.Clave, entrada.Operacion.Operacion.Valor)
 	nr.LastIndice[nr.Yo] = entrada.Operacion.Indice
 	nr.Logger.Println(nr.Log)
 }
