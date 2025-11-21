@@ -947,7 +947,5 @@ func (nr *NodoRaft) ObtenerLogNodo(args Vacio, reply *EstadoLogRemoto) error {
 func (nr *NodoRaft) obtenerLogNodo() int {
 	len := nr.getUltimoIndice()
 
-	nr.Logger.Printf("Devolviendo log: %d\n", len)
-
 	return len
 }

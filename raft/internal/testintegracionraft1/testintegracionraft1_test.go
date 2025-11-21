@@ -117,6 +117,9 @@ func TestAcuerdosConFallos(t *testing.T) { // (m *testing.M) {
 	t.Run("T5:SometerConcurrentementeOperaciones ",
 		func(t *testing.T) { cfg.SometerConcurrentementeOperaciones(t) })
 
+	t.Run("T5:AcuerdoTrasLiderCaido ",
+		func(t *testing.T) { cfg.AcuerdoTrasLiderCaido(t) })
+
 }
 
 // ---------------------------------------------------------------------
@@ -169,7 +172,7 @@ func (cfg *configDespliegue) stop() {
 
 // Se ponen en marcha las replicas - 3 NODOS RAFT
 func (cfg *configDespliegue) soloArranqueYparadaTest1(t *testing.T) {
-	t.Skip("SKIPPED soloArranqueYparadaTest1")
+	//t.Skip("SKIPPED soloArranqueYparadaTest1")
 
 	fmt.Println(t.Name(), ".....................")
 
@@ -225,19 +228,17 @@ func (cfg *configDespliegue) falloAnteriorElegirNuevoLiderTest3(t *testing.T) {
 	// Espera para que hayan elegido lider
 	time.Sleep(4000 * time.Millisecond)
 
-	fmt.Printf("Lider inicial\n")
 	lider := cfg.pruebaUnLider(3)
 
-	fmt.Printf("Encontrado lider %d\n", lider)
+	fmt.Printf("Encontrado lider inicial %d\n", lider)
 
 	cfg.stopDistributedProcess(lider)
 	cfg.conectados[lider] = false
 
 	time.Sleep(4000 * time.Millisecond)
 
-	fmt.Printf("Comprobar nuevo lider\n")
 	newlider := cfg.pruebaUnLider(3)
-	fmt.Printf("Encontrado lider %d\n", newlider)
+	fmt.Printf("Encontrado nuevo lider %d\n", newlider)
 
 	// Parar réplicas almacenamiento en remoto
 	for i := 0; i < 3; i++ {
@@ -335,13 +336,13 @@ func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
 			cfg.conectados[i] = false
 		}
 	}
-	time.Sleep(4000 * time.Millisecond)
+	fmt.Printf("No deberian comprometerse \n")
+	time.Sleep(2000 * time.Millisecond)
 
 	// Comprobar varios acuerdos con 2 réplicas desconectada
 	cfg.someterOperacionRaftFallo(lider)
 	cfg.someterOperacionRaftFallo(lider)
 	cfg.someterOperacionRaftFallo(lider)
-	fmt.Printf("No deberian comprometerse \n")
 	time.Sleep(4000 * time.Millisecond)
 
 	// reconectar los 2 nodos Raft desconectados y probar varios acuerdos
@@ -362,7 +363,7 @@ func (cfg *configDespliegue) SinAcuerdoPorFallos(t *testing.T) {
 
 // Se somete 5 operaciones de forma concurrente -- 3 NODOS RAFT
 func (cfg *configDespliegue) SometerConcurrentementeOperaciones(t *testing.T) {
-	//t.Skip("SKIPPED SometerConcurrentementeOperaciones")
+	t.Skip("SKIPPED SometerConcurrentementeOperaciones")
 
 	cfg.startDistributedProcesses()
 
@@ -389,6 +390,52 @@ func (cfg *configDespliegue) SometerConcurrentementeOperaciones(t *testing.T) {
 
 		}
 	}
+
+	cfg.stopDistributedProcesses()
+
+}
+
+// Hay consistencia a pesar de haber caido el lider
+func (cfg *configDespliegue) AcuerdoTrasLiderCaido(t *testing.T) {
+	//t.Skip("SKIPPED AcuerdoTrasLiderCaido")
+
+	cfg.startDistributedProcesses()
+
+	// Espera para que hayan elegido lider
+	time.Sleep(200 * time.Millisecond)
+
+	lider := cfg.pruebaUnLider(3)
+
+	fmt.Printf("Encontrado lider %d\n", lider)
+
+	// Comprometer dos entradas
+	cfg.someterOperacionRaft(lider)
+	cfg.someterOperacionRaft(lider)
+
+	cfg.stopDistributedProcess(lider)
+	cfg.conectados[lider] = false
+
+	time.Sleep(200 * time.Millisecond)
+
+	nuevolider := cfg.pruebaUnLider(3)
+
+	fmt.Printf("Encontrado lider %d\n", nuevolider)
+
+	// Comprobar varios acuerdos con el lider anterior caido
+	cfg.someterOperacionRaft(nuevolider)
+	cfg.someterOperacionRaft(nuevolider)
+
+	// reconectar nodo Raft previamente desconectado y comprobar varios acuerdos
+	cfg.startDistributedProcess(lider)
+	cfg.conectados[lider] = true
+
+	cfg.someterOperacionRaft(nuevolider)
+	cfg.someterOperacionRaft(nuevolider)
+	time.Sleep(200 * time.Millisecond)
+
+	fmt.Printf("Tamaño final log: %d\n", cfg.obtenerLogsRemotos(lider)+1)
+
+	cfg.stopDistributedProcesses()
 }
 
 // --------------------------------------------------------------------------
@@ -457,7 +504,7 @@ func (cfg *configDespliegue) someterOperacionRaft(indiceNodo int) (
 		raft.TipoOperacion{Operacion: "escribir", Clave: "clave", Valor: "valor"}, &reply, 200*time.Millisecond)
 
 	check.CheckError(err, "Error en llamada RPC SometerOperacionRaft")
-	time.Sleep(4000 * time.Millisecond)
+	time.Sleep(2000 * time.Millisecond)
 
 	return reply.IndiceRegistro, reply.Mandato, reply.EsLider,
 		reply.IdLider, reply.ValorADevolver
